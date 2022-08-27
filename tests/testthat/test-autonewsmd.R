@@ -88,10 +88,17 @@ test_that("correct functioning of autonewsmd", {
   an$write()
   expect_length(list.files(path = path, pattern = "^NEWS$"), 1)
 
-  expect_message(
-    object = autonewsmd$new(repo_name = "TestRepo"),
-    regexp = "No 'repo_path' provided. Setting "
-  )
+  if (dir.exists(".git")) {
+    expect_message(
+      object = autonewsmd$new(repo_name = "TestRepo"),
+      regexp = "No 'repo_path' provided. Setting "
+    )
+  } else {
+    expect_error(
+      object = autonewsmd$new(repo_name = "TestRepo"),
+      regexp = "The 'path' is not in a git repository"
+    )
+  }
 
   # clean up
   do.call(

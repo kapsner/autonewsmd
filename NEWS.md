@@ -7,6 +7,11 @@
 -   addressing comments raised during the first submission to cran
     ([fbab006](https://github.com/kapsner/autonewsmd.git/tree/fbab006658f4a26b4112e5413af5f3da88bd68bb))
 
+#### Tests
+
+-   fixing unit-tests on windows
+    ([f9e9a55](https://github.com/kapsner/autonewsmd.git/tree/f9e9a55d61ef13fd0e6ce0ac43d612dac8a33ac2))
+
 #### CI
 
 -   add libharfbuzz-dev libfribidi-dev dependencies
@@ -28,4 +33,4 @@
     ([7c967f3](https://github.com/kapsner/autonewsmd.git/tree/7c967f3424fdd88390792d3a3053902349974153))
 
 Full set of changes:
-[`1455a33...18b5580`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...18b5580)
+[`1455a33...f9e9a55`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...f9e9a55)
