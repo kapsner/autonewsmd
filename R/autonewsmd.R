@@ -33,7 +33,8 @@
 #' @examples
 #' # (Example is based on the public examples from the `git2r` R package)
 #' ## Initialize a repository
-#' path <- tempdir()
+#' path <- file.path(tempdir(), "autonewsmd")
+#' dir.create(path)
 #' repo <- git2r::init(path)
 #'
 #' ## Config user
@@ -107,7 +108,8 @@ autonewsmd <- R6::R6Class(
     #' @examples
     #' # (Example is based on the public examples from the `git2r` R package)
     #' ## Initialize a repository
-    #' path <- tempdir()
+    #' path <- file.path(tempdir(), "autonewsmd")
+    #' dir.create(path)
     #' repo <- git2r::init(path)
     #'
     #' ## Config user
@@ -154,7 +156,7 @@ autonewsmd <- R6::R6Class(
           "No 'repo_path' provided. Setting 'repo_path' to '.' - please ",
           "be aware that the file specified with 'file_name' and ",
           "'file_ending' will overwrite existing files without a warning when ",
-          "executing the '$write'-method."
+          "executing the '$write()'-method."
         ))
         repo_path <- "."
       }
@@ -176,7 +178,8 @@ autonewsmd <- R6::R6Class(
     #' @examples
     #' # (Example is based on the public examples from the `git2r` R package)
     #' ## Initialize a repository
-    #' path <- tempdir()
+    #' path <- file.path(tempdir(), "autonewsmd")
+    #' dir.create(path)
     #' repo <- git2r::init(path)
     #'
     #' ## Config user

@@ -18,7 +18,8 @@ test_that("correct functioning of autonewsmd", {
 
   # (Example is based on the public examples from the `git2r` R package)
   ## Initialize a repository
-  path <- tempdir()
+  path <- file.path(tempdir(), "autonewsmd")
+  dir.create(path)
   repo <- git2r::init(path)
 
   ## Config user
@@ -86,6 +87,11 @@ test_that("correct functioning of autonewsmd", {
   an$generate()
   an$write()
   expect_length(list.files(path = path, pattern = "^NEWS$"), 1)
+
+  expect_message(
+    object = autonewsmd$new(repo_name = "TestRepo"),
+    regexp = "No 'repo_path' provided. Setting "
+  )
 
   # clean up
   do.call(

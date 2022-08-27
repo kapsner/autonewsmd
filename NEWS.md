@@ -2,6 +2,11 @@
 
 ## Unreleased (2022-08-27)
 
+#### Bug fixes
+
+-   addressing comments raised during the first submission to cran
+    ([fbab006](https://github.com/kapsner/autonewsmd.git/tree/fbab006658f4a26b4112e5413af5f3da88bd68bb))
+
 #### CI
 
 -   add libharfbuzz-dev libfribidi-dev dependencies
@@ -11,6 +16,8 @@
 
 #### Other changes
 
+-   updated description
+    ([18b5580](https://github.com/kapsner/autonewsmd.git/tree/18b558032c7cd5e8619afe7a1da6f0ddbc1fc9b5))
 -   fixed typo in vignette
     ([afe84f3](https://github.com/kapsner/autonewsmd.git/tree/afe84f3748e4c504b90f878c78e4edd2f6c76503))
 -   updated badges in readme
@@ -21,4 +28,4 @@
     ([7c967f3](https://github.com/kapsner/autonewsmd.git/tree/7c967f3424fdd88390792d3a3053902349974153))
 
 Full set of changes:
-[`1455a33...afe84f3`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...afe84f3)
+[`1455a33...18b5580`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...18b5580)

@@ -16,7 +16,8 @@ The changelog file has a title that typically includes the name of the
 \examples{
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempdir()
+path <- file.path(tempdir(), "autonewsmd")
+dir.create(path)
 repo <- git2r::init(path)
 
 ## Config user
@@ -56,7 +57,8 @@ an$write()
 
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempdir()
+path <- file.path(tempdir(), "autonewsmd")
+dir.create(path)
 repo <- git2r::init(path)
 
 ## Config user
@@ -96,7 +98,8 @@ an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempdir()
+path <- file.path(tempdir(), "autonewsmd")
+dir.create(path)
 repo <- git2r::init(path)
 
 ## Config user
@@ -237,7 +240,8 @@ A new `autonewsmd` object.
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{# (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempdir()
+path <- file.path(tempdir(), "autonewsmd")
+dir.create(path)
 repo <- git2r::init(path)
 
 ## Config user
@@ -300,7 +304,8 @@ Populates the public field `repo_list`.
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{# (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempdir()
+path <- file.path(tempdir(), "autonewsmd")
+dir.create(path)
 repo <- git2r::init(path)
 
 ## Config user
