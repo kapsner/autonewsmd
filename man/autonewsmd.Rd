@@ -16,8 +16,7 @@ The changelog file has a title that typically includes the name of the
 \examples{
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempfile(pattern = "autnewsmd-")
-dir.create(path)
+path <- tempdir()
 repo <- git2r::init(path)
 
 ## Config user
@@ -27,6 +26,133 @@ git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 ## Write to a file and commit
 lines <- "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+## generate the news and write them to the repo
+an$generate()
+an$write()
+
+
+## ------------------------------------------------
+## Method `autonewsmd$new`
+## ------------------------------------------------
+
+# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+
+## ------------------------------------------------
+## Method `autonewsmd$generate`
+## ------------------------------------------------
+
+# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+## generate the news and write them to the repo
+an$generate()
+
+
+## ------------------------------------------------
+## Method `autonewsmd$write`
+## ------------------------------------------------
+
+# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
 writeLines(lines, file.path(path, "example.txt"))
 
 git2r::add(repo, "example.txt")
@@ -89,7 +215,7 @@ changelog should be written to. Defaults to `".md"`.}
 \subsection{Method \code{new()}}{
 Create a new `autonewsmd` object.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$new(repo_name, repo_path = ".")}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$new(repo_name, repo_path = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -99,13 +225,56 @@ Create a new `autonewsmd` object.
 inserted into the title of the changelog file.}
 
 \item{\code{repo_path}}{A character. The path of the repository to create a new
-changelog for. Defaults to `"."`.}
+changelog for. If `NULL` (the default), it will point automatically to
+to `"."`.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
 A new `autonewsmd` object.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-autonewsmd-generate"></a>}}
@@ -127,6 +296,51 @@ The function generates the formatted list with the commit
 \subsection{Returns}{
 Populates the public field `repo_list`.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+## generate the news and write them to the repo
+an$generate()
+
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-autonewsmd-write"></a>}}
@@ -147,6 +361,52 @@ This function writes the changelog to the file system using the
 The function has no return value - it creates the new changelog
   file.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempdir()
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(
+  repo, user.name = "Alice", user.email = "alice@example.org"
+)
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- paste0(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+)
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file")
+
+## Write again to a file and commit
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## now construct a new autonewsmd object
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+## generate the news and write them to the repo
+an$generate()
+an$write()
+
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-autonewsmd-clone"></a>}}

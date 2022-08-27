@@ -29,8 +29,7 @@ library(autonewsmd)
 
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
-path <- tempfile(pattern = "autnewsmd-")
-dir.create(path)
+path <- tempdir()
 repo <- git2r::init(path)
 
 ## Config user

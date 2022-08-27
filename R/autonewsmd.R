@@ -33,8 +33,7 @@
 #' @examples
 #' # (Example is based on the public examples from the `git2r` R package)
 #' ## Initialize a repository
-#' path <- tempfile(pattern = "autnewsmd-")
-#' dir.create(path)
+#' path <- tempdir()
 #' repo <- git2r::init(path)
 #'
 #' ## Config user
@@ -101,10 +100,64 @@ autonewsmd <- R6::R6Class(
     #' @param repo_name A character. The name of the repository, which is
     #'   inserted into the title of the changelog file.
     #' @param repo_path A character. The path of the repository to create a new
-    #'   changelog for. Defaults to `"."`.
+    #'   changelog for. If `NULL` (the default), it will point automatically to
+    #'   to `"."`.
     #' @return A new `autonewsmd` object.
-    initialize = function(repo_name, repo_path = ".") {
-      stopifnot(is.character(repo_name))
+    #'
+    #' @examples
+    #' # (Example is based on the public examples from the `git2r` R package)
+    #' ## Initialize a repository
+    #' path <- tempdir()
+    #' repo <- git2r::init(path)
+    #'
+    #' ## Config user
+    #' git2r::config(
+    #'   repo, user.name = "Alice", user.email = "alice@example.org"
+    #' )
+    #' git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+    #'
+    #'
+    #' ## Write to a file and commit
+    #' lines <- paste0(
+    #'   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+    #' )
+    #' writeLines(lines, file.path(path, "example.txt"))
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "feat: new file")
+    #'
+    #' ## Write again to a file and commit
+    #' lines2 <- paste0(
+    #'   "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    #'   "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    #'   "nisi ut aliquip ex ea commodo consequat."
+    #' )
+    #' write(lines2, file.path(path, "example.txt"), append = TRUE)
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "refactor: added second phrase")
+    #'
+    #' ## now construct a new autonewsmd object
+    #' an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+    #'
+    initialize = function(repo_name, repo_path = NULL) {
+      stopifnot(
+        is.character(repo_name),
+        ifelse(
+          test = is.null(repo_path),
+          yes = TRUE,
+          no = is.character(repo_path) && dir.exists(repo_path)
+        )
+      )
+      if (is.null(repo_path)) {
+        message(paste0(
+          "No 'repo_path' provided. Setting 'repo_path' to '.' - please ",
+          "be aware that the file specified with 'file_name' and ",
+          "'file_ending' will overwrite existing files without a warning when ",
+          "executing the '$write'-method."
+        ))
+        repo_path <- "."
+      }
       self$repo_name <- repo_name
       private$repo_path <- normalizePath(repo_path)
       private$repo <- git2r::repository(path = private$repo_path)
@@ -119,6 +172,46 @@ autonewsmd <- R6::R6Class(
     #'   specific tag. These assignments are used to structure the changelog
     #'   document.
     #' @return Populates the public field `repo_list`.
+    #'
+    #' @examples
+    #' # (Example is based on the public examples from the `git2r` R package)
+    #' ## Initialize a repository
+    #' path <- tempdir()
+    #' repo <- git2r::init(path)
+    #'
+    #' ## Config user
+    #' git2r::config(
+    #'   repo, user.name = "Alice", user.email = "alice@example.org"
+    #' )
+    #' git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+    #'
+    #'
+    #' ## Write to a file and commit
+    #' lines <- paste0(
+    #'   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+    #' )
+    #' writeLines(lines, file.path(path, "example.txt"))
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "feat: new file")
+    #'
+    #' ## Write again to a file and commit
+    #' lines2 <- paste0(
+    #'   "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    #'   "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    #'   "nisi ut aliquip ex ea commodo consequat."
+    #' )
+    #' write(lines2, file.path(path, "example.txt"), append = TRUE)
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "refactor: added second phrase")
+    #'
+    #' ## now construct a new autonewsmd object
+    #' an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+    #'
+    #' ## generate the news and write them to the repo
+    #' an$generate()
+    #'
     generate = function() {
       self$repo_list <- get_git_log(
         repo = private$repo,
@@ -134,6 +227,47 @@ autonewsmd <- R6::R6Class(
     #'   CAUTION: existing files will be overwritten without any warning.
     #' @return The function has no return value - it creates the new changelog
     #'   file.
+    #'
+    #' @examples
+    #' # (Example is based on the public examples from the `git2r` R package)
+    #' ## Initialize a repository
+    #' path <- tempdir()
+    #' repo <- git2r::init(path)
+    #'
+    #' ## Config user
+    #' git2r::config(
+    #'   repo, user.name = "Alice", user.email = "alice@example.org"
+    #' )
+    #' git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+    #'
+    #'
+    #' ## Write to a file and commit
+    #' lines <- paste0(
+    #'   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+    #' )
+    #' writeLines(lines, file.path(path, "example.txt"))
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "feat: new file")
+    #'
+    #' ## Write again to a file and commit
+    #' lines2 <- paste0(
+    #'   "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    #'   "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    #'   "nisi ut aliquip ex ea commodo consequat."
+    #' )
+    #' write(lines2, file.path(path, "example.txt"), append = TRUE)
+    #'
+    #' git2r::add(repo, "example.txt")
+    #' git2r::commit(repo, "refactor: added second phrase")
+    #'
+    #' ## now construct a new autonewsmd object
+    #' an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+    #'
+    #' ## generate the news and write them to the repo
+    #' an$generate()
+    #' an$write()
+    #'
     write = function() {
       stopifnot(
         !is.null(self$repo_list),
