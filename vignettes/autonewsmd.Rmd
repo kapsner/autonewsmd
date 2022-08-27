@@ -61,7 +61,7 @@ git2r::commit(repo, "refactor: added second phrase")
 git2r::tag(repo, "v0.0.1")
 ```
 
-Then, instantiate an `autonewsmd` object. Here, you must provide the `repo_name` (this argument is used to compose the title of the changelog file). The `repo_path`-argument can be provided optionally and defaults to the current working directory (`"."`). The `repo_path` should be the root of a git repository. The `§generate()`-method creates a list with all commit messages that is used for rendering the changelog file.
+Then, instantiate an `autonewsmd` object. Here, you must provide the `repo_name` (this argument is used to compose the title of the changelog file). The `repo_path`-argument can be provided optionally and defaults to the current working directory (`"."`). The `repo_path` should be the root of a git repository. The `$generate()`-method creates a list with all commit messages that is used for rendering the changelog file.
 
 ```{r instantiatenmd}
 an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
