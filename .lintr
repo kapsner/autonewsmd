@@ -1,0 +1,6 @@
+linters: linters_with_defaults(
+    # lintr defaults: https://github.com/jimhester/lintr#available-linters
+    # avoid linting with the following comment in the respective line: '# nolint'
+    # the following setup changes/removes certain linters
+    cyclocomp_linter = NULL # do not check function complexity
+  )

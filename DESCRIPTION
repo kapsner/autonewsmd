@@ -1,0 +1,28 @@
+Package: autonewsmd
+Title: Auto-Generate Changelog using Conventional Commits
+Version: 0.0.1
+Authors@R: 
+    person("Lorenz A.", "Kapsner", , "lorenz.kapsner@gmail.com", role = c("cre", "aut", "cph"),
+           comment = c(ORCID = "0000-0003-1866-860X"))
+Description: Automatically generate a changelog file (NEWS.md /
+    CHANGELOG.md) from the git history using conventional commit messages
+    (<https://www.conventionalcommits.org/en/v1.0.0/>).
+License: GPL (>= 3)
+URL: https://github.com/kapsner/autonewsmd
+BugReports: https://github.com/kapsner/autonewsmd/issues
+Depends: 
+    R (>= 2.10)
+Imports: 
+    data.table,
+    git2r,
+    magrittr,
+    R6,
+    rmarkdown
+Suggests: 
+    knitr,
+    lintr,
+    testthat (>= 3.0.1)
+VignetteBuilder: 
+    knitr
+Date/Publication: 2022-08-27 05:48:22 UTC
+Encoding: UTF-8

@@ -1,0 +1,126 @@
+---
+title: "autonewsmd"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{autonewsmd}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The purpose of the `autonewsmd` R package is to bring the power of conventional commit messages to the R community. There is no need anymore to tediously maintain a changelog file manually. If you are using conventional commit messages, `autonewsmd` will do that for you and automatically generate a human readable changelog file directly from the repository's git history.
+
+Conventional commit messages ([https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)) come with some easy rules to create human readable commit messages for a git history. One advantage is that following these conventions, these messages are also machine readable and automated tools can run on top of them in order to, e.g., generate beautiful changelogs out of them. Similar tools for other languages are, for example, [`auto-changelog`](https://github.com/cookpete/auto-changelog) for JavaScript and [`auto-changelog`](https://github.com/KeNaCo/auto-changelog) for Python.
+
+## Example
+
+First of all, for demonstration purposes, a small git repository will be created with some commit messages.
+
+```{r creategit}
+library(autonewsmd)
+
+# (Example is based on the public examples from the `git2r` R package)
+## Initialize a repository
+path <- tempfile(pattern = "autnewsmd-")
+dir.create(path)
+repo <- git2r::init(path)
+
+## Config user
+git2r::config(repo, user.name = "Alice", user.email = "alice@example.org")
+git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+
+
+## Write to a file and commit
+lines <- "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+writeLines(lines, file.path(path, "example.txt"))
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "feat: new file example.txt")
+
+## Write again to a file and commit
+Sys.sleep(2) # wait two seconds, otherwise, commit messages have same time stamp
+lines2 <- paste0(
+  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+  "nisi ut aliquip ex ea commodo consequat."
+)
+write(lines2, file.path(path, "example.txt"), append = TRUE)
+
+git2r::add(repo, "example.txt")
+git2r::commit(repo, "refactor: added second phrase")
+
+## Also add a tag here
+git2r::tag(repo, "v0.0.1")
+```
+
+Then, instantiate an `autonewsmd` object. Here, you must provide the `repo_name` (this argument is used to compose the title of the changelog file). The `repo_path`-argument can be provided optionally and defaults to the current working directory (`"."`). The `repo_path` should be the root of a git repository. The `§generate()`-method creates a list with all commit messages that is used for rendering the changelog file.
+
+```{r instantiatenmd}
+an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+an$generate()
+```
+
+```{r viewrepolist}
+# View the list
+an$repo_list
+```
+
+Executing the `$write()`-method, the changelog is written to the path specified with the `repo_path`-argument (CAUTION: this method overwrites the changelog without any warning).
+
+```{r writenmd}
+an$write()
+```
+
+Now, we can verify that the file `NEWS.md` also appears in the git folder and check its content.
+
+```{r listfiles}
+list.files(path)
+```
+
+```{r readnmd}
+newsmd <- readLines(file.path(path, "NEWS.md"))
+newsmd
+```
+
+To see, how the changelog file builds up, the new file can also be added and committed.
+
+```{r addnmd}
+Sys.sleep(2)
+git2r::add(repo, "NEWS.md")
+git2r::commit(repo, "chore: added news.md file")
+an$generate()
+an$write()
+```
+
+```{r readnmd2}
+newsmd <- readLines(file.path(path, "NEWS.md"))
+newsmd
+```
+
+## Further configurations
+
+Besides `repo_name` and `repo_path`, there are some other (optional) configurations available. The file name can be modified with the field `$file_name`. Typically, the file name is `NEWS` or `CHANGELOG`.
+
+```{r fn}
+an$file_name
+```
+
+Furthermore, the ending of the changelog file can be set with `$file_ending`. This defaults to `.md`, but could, for example, also be `.txt` or even an empty string.
+
+```{r fe}
+an$file_ending
+```
+
+A very important configuration is the `tag_pattern`. This regular expression is used to identify release tags, which are used to create the subsections of the changelog file. This field defaults to `"^v(\\d+\\.){2}\\d+(\\.\\d+)?$"` to identify patterns of the from `v0.0.1.9001`.
+
+```{r tp}
+an$tag_pattern
+```
