@@ -1,9 +1,9 @@
 # autonewsmd
 
 <!-- badges: start -->
-[![R build status](https://github.com/kapsner/autonewsmd/workflows/R CMD Check via {tic}/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
-[![R build status](https://github.com/kapsner/autonewsmd/workflows/lint/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
-[![R build status](https://github.com/kapsner/autonewsmd/workflows/test-coverage/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
+[![R build status](https://github.com/kapsner/autonewsmd/workflows/R CMD Check via {tic}/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
+[![R build status](https://github.com/kapsner/autonewsmd/workflows/lint/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
+[![R build status](https://github.com/kapsner/autonewsmd/workflows/test-coverage/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
 <!-- badges: end -->
 
 The purpose of the `autonewsmd` R package is to bring the power of conventional commit messages to the R community. There is no need anymore to tediously maintain a changelog file manually. If you are using conventional commit messages, `autonewsmd` will do that for you and automatically generate a human readable changelog file directly from the repository's git history.
