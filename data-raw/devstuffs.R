@@ -44,7 +44,7 @@ my_desc$set("License", "GPL-3")
 my_desc$write(file = "DESCRIPTION")
 
 # License
-usethis::use_gpl3_license()
+#usethis::use_gpl3_license()
 
 # Depends
 usethis::use_package("R", min_version = "2.10", type = "Depends")
