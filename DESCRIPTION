@@ -26,3 +26,4 @@ VignetteBuilder:
     knitr
 Date/Publication: 2022-08-27 17:39:33 UTC
 Encoding: UTF-8
+RoxygenNote: 7.2.1
