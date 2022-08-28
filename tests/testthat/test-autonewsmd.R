@@ -55,7 +55,7 @@ test_that("correct functioning of autonewsmd", {
   expect_length(an$repo_list, 1)
   expect_length(an$repo_list[["Unreleased"]], 7)
 
-  an$write()
+  an$write(force = TRUE)
 
   expect_true(all(sapply(
     X = list.files(path),
@@ -78,14 +78,14 @@ test_that("correct functioning of autonewsmd", {
   an$file_ending <- ".txt"
   an$tag_pattern <- "^r(\\d+\\.){2}\\d+(\\.\\d+)?$"
   an$generate()
-  an$write()
+  an$write(force = TRUE)
   expect_length(list.files(path = path, pattern = "^NEWS\\.txt$"), 1)
 
   an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
   an$file_ending <- ""
   an$tag_pattern <- "^r(\\d+\\.){2}\\d+(\\.\\d+)?$"
   an$generate()
-  an$write()
+  an$write(force = TRUE)
   expect_length(list.files(path = path, pattern = "^NEWS$"), 1)
 
   if (dir.exists(".git")) {
@@ -100,4 +100,5 @@ test_that("correct functioning of autonewsmd", {
     file.remove,
     list(list.files(path, full.names = TRUE))
   )
+  unlink(path, recursive = TRUE)
 })

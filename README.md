@@ -67,10 +67,10 @@ an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 an$generate()
 ```
 
-Executing the `$write()`-method, the changelog is written to the path specified with the `repo_path`-argument (CAUTION: this method overwrites the changelog without any warning).
+Executing the `$write()`-method, the changelog is written to the path specified with the `repo_path`-argument. If `force = FALSE` (the default), a dialog is prompted to ask the user if the file should be (over-) written.
 
-```{r}
-an$write()
+```{r writenmd}
+an$write(force = TRUE)
 ```
 
 Now, we can verify that the file `NEWS.md` also appears in the git folder and check its content.

@@ -73,10 +73,10 @@ an$generate()
 an$repo_list
 ```
 
-Executing the `$write()`-method, the changelog is written to the path specified with the `repo_path`-argument (CAUTION: this method overwrites the changelog without any warning).
+Executing the `$write()`-method, the changelog is written to the path specified with the `repo_path`-argument. If `force = FALSE` (the default), a dialog is prompted to ask the user if the file should be (over-) written.
 
 ```{r writenmd}
-an$write()
+an$write(force = TRUE)
 ```
 
 Now, we can verify that the file `NEWS.md` also appears in the git folder and check its content.
@@ -97,7 +97,7 @@ Sys.sleep(2)
 git2r::add(repo, "NEWS.md")
 git2r::commit(repo, "chore: added news.md file")
 an$generate()
-an$write()
+an$write(force = TRUE)
 ```
 
 ```{r readnmd2}

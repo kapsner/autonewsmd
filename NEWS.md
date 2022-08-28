@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-08-27)
+## v0.0.1 (2022-08-27)
 
 #### Bug fixes
 
@@ -9,6 +9,10 @@
 
 #### Tests
 
+-   fixing unit-tests on windows 3
+    ([03a28de](https://github.com/kapsner/autonewsmd.git/tree/03a28deb949360ca900b163166d3bc0de0ba8030))
+-   fixing unit-tests on windows 2
+    ([fafad0a](https://github.com/kapsner/autonewsmd.git/tree/fafad0ac6a6a55ea32eefbcab19952e5dffa14e3))
 -   fixing unit-tests on windows
     ([f9e9a55](https://github.com/kapsner/autonewsmd.git/tree/f9e9a55d61ef13fd0e6ce0ac43d612dac8a33ac2))
 
@@ -21,6 +25,8 @@
 
 #### Other changes
 
+-   added cran-comments.md
+    ([fe41b09](https://github.com/kapsner/autonewsmd.git/tree/fe41b09a48d99692139253a27b2281badf2710b5))
 -   updated description
     ([18b5580](https://github.com/kapsner/autonewsmd.git/tree/18b558032c7cd5e8619afe7a1da6f0ddbc1fc9b5))
 -   fixed typo in vignette
@@ -33,4 +39,4 @@
     ([7c967f3](https://github.com/kapsner/autonewsmd.git/tree/7c967f3424fdd88390792d3a3053902349974153))
 
 Full set of changes:
-[`1455a33...f9e9a55`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...f9e9a55)
+[`1455a33...v0.0.1`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...v0.0.1)

@@ -65,7 +65,10 @@
 #'
 #' ## generate the news and write them to the repo
 #' an$generate()
-#' an$write()
+#'
+#' if (interactive()) {
+#'   an$write()
+#' }
 #'
 #' @export
 
@@ -152,12 +155,9 @@ autonewsmd <- R6::R6Class(
         )
       )
       if (is.null(repo_path)) {
-        message(paste0(
-          "No 'repo_path' provided. Setting 'repo_path' to '.' - please ",
-          "be aware that the file specified with 'file_name' and ",
-          "'file_ending' will overwrite existing files without a warning when ",
-          "executing the '$write()'-method."
-        ))
+        message(
+          "No 'repo_path' provided. Setting 'repo_path' to '.'."
+        )
         repo_path <- "."
       }
       self$repo_name <- repo_name
@@ -228,6 +228,9 @@ autonewsmd <- R6::R6Class(
     #' @details This function writes the changelog to the file system using the
     #'   `file_name` and `file_ending` fields to compose the file name.
     #'   CAUTION: existing files will be overwritten without any warning.
+    #' @param force A boolean. If `FALSE` (the default) a dialog is prompted to
+    #'   ask the user if the file should be (over-) written. If `TRUE`, the
+    #'   dialog is not prompted and the changelog file is created directly.
     #' @return The function has no return value - it creates the new changelog
     #'   file.
     #'
@@ -269,13 +272,33 @@ autonewsmd <- R6::R6Class(
     #'
     #' ## generate the news and write them to the repo
     #' an$generate()
-    #' an$write()
     #'
-    write = function() {
+    #' if (interactive()) {
+    #'   an$write()
+    #' }
+    #'
+    write = function(force = FALSE) {
       stopifnot(
         !is.null(self$repo_list),
-        !is.null(private$repo_url)
+        !is.null(private$repo_url),
+        is.logical(force)
       )
+
+      if (isFALSE(force)) {
+        msg <- paste0(
+          "Do you want to write the newly generated '",
+          self$file_name, self$file_ending, "' file? ",
+          "CAUTION: this will overwrite the file, if it already exists."
+        )
+        answer <- utils::askYesNo(
+          msg = msg,
+          default = TRUE
+        )
+
+        if (!isTRUE(answer)) {
+          return(invisible())
+        }
+      }
       markdown_render(
         repo_list = self$repo_list,
         repo_url = private$repo_url,
