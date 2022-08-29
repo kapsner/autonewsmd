@@ -1,5 +1,20 @@
 # autonewsmd NEWS
 
+## Unreleased (2022-08-29)
+
+#### New features
+
+-   prompting for user input before writing the changelog file
+    ([2cb392e](https://github.com/kapsner/autonewsmd.git/tree/2cb392e0cfdf6505447f770871252742371ad44d))
+
+#### Docs
+
+-   added cran installation and cran badges
+    ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
+
+Full set of changes:
+[`v0.0.1...de3c6bc`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...de3c6bc)
+
 ## v0.0.1 (2022-08-27)
 
 #### Bug fixes

@@ -359,7 +359,7 @@ an$generate()
 \subsection{Method \code{write()}}{
 Writes the changelog to the file system.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$write(force = FALSE)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$write(force = FALSE, con = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

@@ -277,7 +277,7 @@ autonewsmd <- R6::R6Class(
     #'   an$write()
     #' }
     #'
-    write = function(force = FALSE) {
+    write = function(force = FALSE, con = NULL) {
       stopifnot(
         !is.null(self$repo_list),
         !is.null(private$repo_url),
@@ -285,15 +285,42 @@ autonewsmd <- R6::R6Class(
       )
 
       if (isFALSE(force)) {
+        full_path <- file.path(
+          private$repo_path,
+          paste0(self$file_name, self$file_ending)
+        )
         msg <- paste0(
-          "Do you want to write the newly generated '",
-          self$file_name, self$file_ending, "' file? ",
-          "CAUTION: this will overwrite the file, if it already exists."
+          "Do you want to write the file '", full_path, "'?"
         )
-        answer <- utils::askYesNo(
-          msg = msg,
-          default = TRUE
-        )
+        if (file.exists(full_path)) {
+          msg <- paste(
+            msg, "CAUTION: this overwrites the existing file!",
+            sep = "\n"
+          )
+        }
+        if (is.null(con) && interactive()) {
+          answer <- utils::askYesNo(
+            msg = message(msg),
+            default = TRUE
+          )
+        } else if (inherits(con, c("file", "connection"))) {
+          # display prompt and options
+          optlist <- paste(c("Yes", "no", "cancel"), collapse = "/")
+          prompt_opt <- paste0(msg, " (", optlist, ")\n")
+          message(prompt_opt)
+          read_con <- readLines(con = con, n = 1)
+          if (read_con %in% c("Yes", "yes", "y", "ye")) {
+            answer <- TRUE
+          } else {
+            answer <- FALSE
+          }
+        } else {
+          stop(paste0(
+            "Please provide a valid connection containing the ",
+            "answer to the interactive question, if the newly generated ",
+            "changelog file should be written to the file system."
+          ))
+        }
 
         if (!isTRUE(answer)) {
           return(invisible())

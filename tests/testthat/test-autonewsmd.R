@@ -20,6 +20,22 @@ test_that("correct functioning of autonewsmd", {
   ## Initialize a repository
   path <- file.path(tempdir(), "autonewsmd")
   dir.create(path)
+
+  # check behaviour, if no git repo
+  expect_error(
+    autonewsmd$new(repo_name = "TestRepo", repo_path = path),
+    regexp = "The 'path' is not in a git repository"
+  )
+
+  # test wrong type
+  expect_error(
+    autonewsmd$new(repo_name = 1, repo_path = path)
+  )
+  expect_error(
+    autonewsmd$new(repo_name = "TestRepo", repo_path = 1)
+  )
+
+  # init repo
   repo <- git2r::init(path)
 
   ## Config user
@@ -49,6 +65,11 @@ test_that("correct functioning of autonewsmd", {
 
   #### work with autonewsmd
   an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+
+  # test for write() before generate()
+  expect_error(
+    an$write()
+  )
   an$generate()
 
   expect_type(an$repo_list, "list")
@@ -63,6 +84,34 @@ test_that("correct functioning of autonewsmd", {
       x %in% c("example.txt", "NEWS.md")
     })
   ))
+
+  # test interactive (https://debruine.github.io/post/interactive-test/)
+  # yes
+  f <- file()
+  ans <- "y"
+  write(ans, f, append = FALSE)
+  out <- capture_output_lines({
+    an$write(con = f)
+  })
+  expect_output(cat(out), regexp = "ordinary text without R code")
+  close(f) # close the file
+
+  # no
+  f <- file()
+  ans <- "no"
+  write(ans, f, append = FALSE)
+  out <- capture_output_lines({
+    an$write(con = f)
+  })
+  expect_length(out, 0)
+  close(f) # close the file
+
+  # invalid connection
+  f <- 1
+  expect_error(
+    an$write(con = f),
+    regexp = "Please provide a valid connection containing the answer"
+  )
 
   ## check tags
   git2r::tag(repo, "r1.2.3")
@@ -95,7 +144,17 @@ test_that("correct functioning of autonewsmd", {
     )
   }
 
+  path2 <- file.path(tempdir(), "new_folder")
+  dir.create(path2)
+
+  expect_error(
+    object = autonewsmd$new(repo_name = "TestRepo", repo_path = path2),
+    regexp = "The 'path' is not in a git repository"
+  )
+
+
   # clean up
+  unlink(path2, recursive = TRUE)
   do.call(
     file.remove,
     list(list.files(path, full.names = TRUE))
