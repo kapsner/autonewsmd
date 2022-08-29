@@ -1,6 +1,11 @@
 # autonewsmd
 
 <!-- badges: start -->
+[![](https://www.r-pkg.org/badges/version/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
+[![CRAN checks](https://cranchecks.info/badges/summary/autonewsmd)](https://cran.r-project.org/web/checks/check_results_autonewsmd.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
+[![](http://cranlogs.r-pkg.org/badges/last-month/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
+[![Dependencies](https://tinyverse.netlify.com/badge/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
 [![R build status](https://github.com/kapsner/autonewsmd/workflows/R%20CMD%20Check%20via%20{tic}/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
 [![R build status](https://github.com/kapsner/autonewsmd/workflows/lint/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
 [![R build status](https://github.com/kapsner/autonewsmd/workflows/test-coverage/badge.svg?branch=main)](https://github.com/kapsner/autonewsmd/actions)
@@ -13,9 +18,15 @@ Conventional commit messages ([https://www.conventionalcommits.org/en/v1.0.0/](h
 
 ## Installation
 
-You can install the development version of autonewsmd with:
+You can install `autonewsmd` with:
 
-``` r
+```{r}
+install.packages("autonewsmd")
+```
+
+You can install the development version of `autonewsmd` with:
+
+```{r}
 install.packages("remotes")
 remotes::install_github("kapsner/autonewsmd")
 ```

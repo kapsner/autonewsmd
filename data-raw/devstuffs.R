@@ -56,6 +56,7 @@ usethis::use_package("magrittr", type = "Imports")
 usethis::use_package("git2r", type = "Imports")
 usethis::use_package("rmarkdown", type = "Imports")
 usethis::use_package("R6", type = "Imports")
+usethis::use_package("utils", type = "Imports")
 
 # Suggests
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")
@@ -86,9 +87,11 @@ usethis::use_git_ignore("Meta")
 usethis::use_tidy_description()
 
 
-#badger::badge_cran_download("autonewsmd", "grand-total", "blue")
-#badger::badge_cran_download("autonewsmd", "last-month", "blue")
-#badger::badge_dependencies("autonewsmd")
+badger::badge_cran_release("autonewsmd")
+badger::badge_cran_checks("autonewsmd")
+badger::badge_cran_download("autonewsmd", "grand-total", "blue")
+badger::badge_cran_download("autonewsmd", "last-month", "blue")
+badger::badge_dependencies("autonewsmd")
 badger::badge_github_actions(action = "R CMD Check via {tic}")
 badger::badge_github_actions(action = "lint")
 badger::badge_github_actions(action = "test-coverage")
