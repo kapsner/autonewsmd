@@ -14,11 +14,13 @@
 
 #### Docs
 
+-   documented con-argument of write
+    ([e37f63a](https://github.com/kapsner/autonewsmd.git/tree/e37f63a761e1cb38c69879c8627398bc3badbb82))
 -   added cran installation and cran badges
     ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
 
 Full set of changes:
-[`v0.0.1...c3b499d`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...c3b499d)
+[`v0.0.1...e37f63a`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...e37f63a)
 
 ## v0.0.1 (2022-08-27)
 

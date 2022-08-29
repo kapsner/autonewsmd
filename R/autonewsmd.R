@@ -29,6 +29,7 @@
 #' @import data.table
 #' @import R6
 #' @importFrom magrittr "%>%"
+#' @importFrom utils askYesNo
 #'
 #' @examples
 #' # (Example is based on the public examples from the `git2r` R package)
