@@ -368,6 +368,10 @@ Writes the changelog to the file system.
 \item{\code{force}}{A boolean. If `FALSE` (the default) a dialog is prompted to
 ask the user if the file should be (over-) written. If `TRUE`, the
 dialog is not prompted and the changelog file is created directly.}
+
+\item{\code{con}}{A connection with the answer to the interactive question, if
+the changelog file should be written to the file system. This argument
+is intended mainly for being used in the unit tests.}
 }
 \if{html}{\out{</div>}}
 }
