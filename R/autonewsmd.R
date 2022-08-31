@@ -302,6 +302,10 @@ autonewsmd <- R6::R6Class(
             sep = "\n"
           )
         }
+        msg <- paste(
+          msg, "(Use `force = TRUE` to omit this interactive question.)",
+          sep = "\n"
+        )
         if (is.null(con) && interactive()) {
           answer <- utils::askYesNo(
             msg = message(msg),

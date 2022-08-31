@@ -7,6 +7,11 @@
 -   prompting for user input before writing the changelog file
     ([2cb392e](https://github.com/kapsner/autonewsmd.git/tree/2cb392e0cfdf6505447f770871252742371ad44d))
 
+#### Bug fixes
+
+-   added importfrom utils askyesno to namespace
+    ([3c3a4e2](https://github.com/kapsner/autonewsmd.git/tree/3c3a4e26f8f33dca021c5cee0d8bc2f8b41b3b84))
+
 #### Tests
 
 -   increasing test coverage
@@ -20,7 +25,7 @@
     ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
 
 Full set of changes:
-[`v0.0.1...e37f63a`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...e37f63a)
+[`v0.0.1...3c3a4e2`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...3c3a4e2)
 
 ## v0.0.1 (2022-08-27)
 

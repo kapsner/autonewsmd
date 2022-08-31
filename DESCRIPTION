@@ -1,6 +1,6 @@
 Package: autonewsmd
 Title: Auto-Generate Changelog using Conventional Commits
-Version: 0.0.1.9002
+Version: 0.0.2
 Authors@R: 
     person("Lorenz A.", "Kapsner", , "lorenz.kapsner@gmail.com", role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0003-1866-860X"))
@@ -11,7 +11,7 @@ License: GPL-3
 URL: https://github.com/kapsner/autonewsmd
 BugReports: https://github.com/kapsner/autonewsmd/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.4)
 Imports: 
     data.table,
     git2r,
@@ -25,6 +25,6 @@ Suggests:
     testthat (>= 3.0.1)
 VignetteBuilder: 
     knitr
-Date/Publication: 2022-08-29 10:10:15 UTC
+Date/Publication: 2022-08-31 08:02:07 UTC
 Encoding: UTF-8
 RoxygenNote: 7.2.1

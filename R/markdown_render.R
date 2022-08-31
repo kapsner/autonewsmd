@@ -29,7 +29,9 @@ markdown_render <- function(
       package = "autonewsmd"
     ),
     output_file = I(paste0(file_name, file_ending)),
-    output_dir = repo_path
+    output_dir = repo_path,
+    intermediates_dir = tempdir(),
+    knit_root_dir = tempdir()
   )
 
 }
