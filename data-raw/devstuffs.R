@@ -97,7 +97,6 @@ badger::badge_github_actions(action = "lint")
 badger::badge_github_actions(action = "test-coverage")
 
 # nolint end
-library(autonewsmd)
-an <- autonewsmd$new("autonewsmd")
+an <- autonewsmd::autonewsmd$new("autonewsmd")
 an$generate()
 an$write()

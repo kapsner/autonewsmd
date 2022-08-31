@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-08-29)
+## Unreleased (2022-08-31)
 
 #### New features
 
@@ -14,6 +14,8 @@
 
 #### Tests
 
+-   hot-fix to fix failing unit tests on read-only systems
+    ([771a334](https://github.com/kapsner/autonewsmd.git/tree/771a33466c1e9a7940b9cd544299f696de7d87d0))
 -   increasing test coverage
     ([c3b499d](https://github.com/kapsner/autonewsmd.git/tree/c3b499d8b9b3a3dff76baeaa2ee658e864ae846b))
 
@@ -25,7 +27,7 @@
     ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
 
 Full set of changes:
-[`v0.0.1...3c3a4e2`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...3c3a4e2)
+[`v0.0.1...771a334`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...771a334)
 
 ## v0.0.1 (2022-08-27)
 
