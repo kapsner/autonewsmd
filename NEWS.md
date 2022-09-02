@@ -7,6 +7,14 @@
 -   fix cran errors
     ([48ad848](https://github.com/kapsner/autonewsmd.git/tree/48ad8480a22cb2a4ef41c7dd3586cbff0b0d3141))
 
+#### Other changes
+
+-   updated news.md
+    ([3165668](https://github.com/kapsner/autonewsmd.git/tree/31656683c9e510ee7f78cee8bffc6100a9538a50))
+
+Full set of changes:
+[`v0.0.2...3165668`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.2...3165668)
+
 ## v0.0.2 (2022-08-31)
 
 #### New features
