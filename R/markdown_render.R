@@ -23,15 +23,29 @@ markdown_render <- function(
     file_ending
   ) {
 
-  rmarkdown::render(
-    input = system.file(
+  # address issues on some systems when rendering the markdown with the
+  # template as input
+  template_file <- tempfile(
+    pattern = "autonewsmd-",
+    tmpdir = tempdir(),
+    fileext = "-news-md-template.Rmd"
+  )
+
+  # copy template file from package directory to tempdir()
+  file.copy(
+    from = system.file(
       "templates/news-md-template.Rmd",
       package = "autonewsmd"
     ),
-    output_file = I(paste0(file_name, file_ending)),
-    output_dir = repo_path,
-    intermediates_dir = tempdir(),
-    knit_root_dir = tempdir()
+    to = template_file,
+    overwrite = TRUE
   )
 
+  rmarkdown::render(
+    input = template_file,
+    output_file = I(paste0(file_name, file_ending)),
+    output_dir = repo_path
+    #, intermediates_dir = tempdir()
+    #, knit_root_dir = tempdir()
+  )
 }

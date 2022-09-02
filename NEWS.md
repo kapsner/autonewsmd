@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-08-31)
+## v0.0.2 (2022-08-31)
 
 #### New features
 
@@ -26,8 +26,13 @@
 -   added cran installation and cran badges
     ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
 
+#### Other changes
+
+-   updated news.md
+    ([33cee50](https://github.com/kapsner/autonewsmd.git/tree/33cee507c8b2d4d933fa38c095d39394662ffbf6))
+
 Full set of changes:
-[`v0.0.1...771a334`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...771a334)
+[`v0.0.1...v0.0.2`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...v0.0.2)
 
 ## v0.0.1 (2022-08-27)
 
