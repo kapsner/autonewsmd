@@ -97,6 +97,6 @@ badger::badge_github_actions(action = "lint")
 badger::badge_github_actions(action = "test-coverage")
 
 # nolint end
-an <- autonewsmd::autonewsmd$new("autonewsmd")
+an <- autonewsmd::autonewsmd$new(repo_name = packagename)
 an$generate()
 an$write()

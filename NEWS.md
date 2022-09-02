@@ -1,5 +1,12 @@
 # autonewsmd NEWS
 
+## Unreleased (2022-09-02)
+
+#### Bug fixes
+
+-   fix cran errors
+    ([48ad848](https://github.com/kapsner/autonewsmd.git/tree/48ad8480a22cb2a4ef41c7dd3586cbff0b0d3141))
+
 ## v0.0.2 (2022-08-31)
 
 #### New features
