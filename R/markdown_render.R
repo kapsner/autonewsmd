@@ -48,4 +48,6 @@ markdown_render <- function(
     #, intermediates_dir = tempdir()
     #, knit_root_dir = tempdir()
   )
+
+  invisible(file.remove(template_file))
 }
