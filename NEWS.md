@@ -1,11 +1,16 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-02)
+## v0.0.3 (2022-09-03)
 
 #### Bug fixes
 
 -   fix cran errors
     ([48ad848](https://github.com/kapsner/autonewsmd.git/tree/48ad8480a22cb2a4ef41c7dd3586cbff0b0d3141))
+
+#### Refactorings
+
+-   deleting template file after rendering changelog
+    ([7324322](https://github.com/kapsner/autonewsmd.git/tree/7324322da4384cffac947c7f9354e8c65b6ea78f))
 
 #### Docs
 
@@ -18,7 +23,7 @@
     ([3165668](https://github.com/kapsner/autonewsmd.git/tree/31656683c9e510ee7f78cee8bffc6100a9538a50))
 
 Full set of changes:
-[`v0.0.2...1493ad5`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.2...1493ad5)
+[`v0.0.2...v0.0.3`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.2...v0.0.3)
 
 ## v0.0.2 (2022-08-31)
 
