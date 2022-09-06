@@ -1,6 +1,7 @@
 # autonewsmd
 
 <!-- badges: start -->
+[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![](https://www.r-pkg.org/badges/version/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
 [![CRAN checks](https://cranchecks.info/badges/summary/autonewsmd)](https://cran.r-project.org/web/checks/check_results_autonewsmd.html)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
@@ -30,6 +31,29 @@ You can install the development version of `autonewsmd` with:
 install.packages("remotes")
 remotes::install_github("kapsner/autonewsmd")
 ```
+
+## Supported Commit Types
+
+The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formating of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/).
+
+<center>
+
+| Type      | Changelog Subheading |
+| --------- | -------------------- |
+| feat:     | New features         |
+| fix:      | Bug fixes            |
+| refactor: | Refactorings         |
+| perf:     | Performance          |
+| build:    | Build                |
+| test:     | Tests                |
+| ci:       | CI                   |
+| docs:     | Docs                 |
+| style:    | Style                |
+| chore:    | Other changes        |
+
+</center>
+
+If any commit type includes `BREAKING CHANGE` in its commit body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections.
 
 ## Example
 
@@ -118,9 +142,15 @@ newsmd
 
 [autonewsmd](https://github.com/kapsner/autonewsmd/blob/main/NEWS.md), [sjtable2df](https://github.com/kapsner/sjtable2df/blob/main/NEWS.md), [DIZtools](https://github.com/miracum/misc-diztools/blob/main/NEWS.md), [DIZutils](https://github.com/miracum/misc-dizutils/blob/master/NEWS.md), [DQAstats](https://github.com/miracum/dqa-dqastats/blob/master/NEWS.md), [DQAgui](https://github.com/miracum/dqa-dqagui/blob/master/NEWS.md), [miRacumDQA](https://github.com/miracum/dqa-miracumdqa/blob/master/NEWS.md)
 
+## Related R Packages
+
+- [`newsmd`](https://github.com/Dschaykib/newsmd): manually add updates (version or bullet points) to the NEWS.md file
+- [`fledge`](https://github.com/cynkra/fledge): to streamline the process of updating changelogs (NEWS.md) and versioning R packages developed in git repositories (also supporting conventional commits)
+
 ## TODOs:
 
 - add options to format the changelog
+- add more changelog style templates
 - add support for [Commit message with ! to draw attention to breaking change](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with--to-draw-attention-to-breaking-change)
 - add support for [Commit message with scope](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
 - switch rendering of md to quarto -> challenges: currently, quarto does not allow to pass objects from the environment to the document that is rendered; hence, one needs to find a solution how to pass the `repo_list`, which is created in the `get_git_log` function (as well as some other objects) on to the *.qmd file for properly rendering the document.
