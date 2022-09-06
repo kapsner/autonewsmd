@@ -19,7 +19,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.3.9001")
+my_desc$set_version("0.0.3.9002")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package
@@ -78,6 +78,7 @@ usethis::use_build_ignore("NEWS.md")
 usethis::use_build_ignore("README.md")
 usethis::use_build_ignore("docs")
 usethis::use_build_ignore("Meta")
+usethis::use_build_ignore("autonewsmd-manual.tex")
 
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")
@@ -87,6 +88,7 @@ usethis::use_git_ignore("Meta")
 usethis::use_tidy_description()
 
 
+badger::badge_lifecycle()
 badger::badge_cran_release("autonewsmd")
 badger::badge_cran_checks("autonewsmd")
 badger::badge_cran_download("autonewsmd", "grand-total", "blue")

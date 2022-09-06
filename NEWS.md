@@ -1,101 +1,123 @@
 # autonewsmd NEWS
 
+## Unreleased (2022-09-06)
+
+#### Refactorings
+
+-   default interactive answer to na
+    ([9962291](https://github.com/kapsner/autonewsmd/tree/9962291181d1e78baba06a6748ab3a64cbab5ae2))
+-   commit types to private
+    ([e16c7da](https://github.com/kapsner/autonewsmd/tree/e16c7daad2daee2772efda449f067ced3a40f8bf))
+
+#### Docs
+
+-   table with commit types and section related packages
+    ([98fb4b1](https://github.com/kapsner/autonewsmd/tree/98fb4b1d678c224326833452bf6098ca9459e429))
+
+#### Other changes
+
+-   updated news.md
+    ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
+
+Full set of changes:
+[`v0.0.3...9962291`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...9962291)
+
 ## v0.0.3 (2022-09-03)
 
 #### Bug fixes
 
 -   fix cran errors
-    ([48ad848](https://github.com/kapsner/autonewsmd.git/tree/48ad8480a22cb2a4ef41c7dd3586cbff0b0d3141))
+    ([48ad848](https://github.com/kapsner/autonewsmd/tree/48ad8480a22cb2a4ef41c7dd3586cbff0b0d3141))
 
 #### Refactorings
 
 -   deleting template file after rendering changelog
-    ([7324322](https://github.com/kapsner/autonewsmd.git/tree/7324322da4384cffac947c7f9354e8c65b6ea78f))
+    ([7324322](https://github.com/kapsner/autonewsmd/tree/7324322da4384cffac947c7f9354e8c65b6ea78f))
 
 #### Docs
 
 -   fixed typo in readme
-    ([1493ad5](https://github.com/kapsner/autonewsmd.git/tree/1493ad54f96b1ac8930297ae25633bb40aa37447))
+    ([1493ad5](https://github.com/kapsner/autonewsmd/tree/1493ad54f96b1ac8930297ae25633bb40aa37447))
 
 #### Other changes
 
 -   updated news.md
-    ([3165668](https://github.com/kapsner/autonewsmd.git/tree/31656683c9e510ee7f78cee8bffc6100a9538a50))
+    ([3165668](https://github.com/kapsner/autonewsmd/tree/31656683c9e510ee7f78cee8bffc6100a9538a50))
 
 Full set of changes:
-[`v0.0.2...v0.0.3`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.2...v0.0.3)
+[`v0.0.2...v0.0.3`](https://github.com/kapsner/autonewsmd/compare/v0.0.2...v0.0.3)
 
 ## v0.0.2 (2022-08-31)
 
 #### New features
 
 -   prompting for user input before writing the changelog file
-    ([2cb392e](https://github.com/kapsner/autonewsmd.git/tree/2cb392e0cfdf6505447f770871252742371ad44d))
+    ([2cb392e](https://github.com/kapsner/autonewsmd/tree/2cb392e0cfdf6505447f770871252742371ad44d))
 
 #### Bug fixes
 
 -   added importfrom utils askyesno to namespace
-    ([3c3a4e2](https://github.com/kapsner/autonewsmd.git/tree/3c3a4e26f8f33dca021c5cee0d8bc2f8b41b3b84))
+    ([3c3a4e2](https://github.com/kapsner/autonewsmd/tree/3c3a4e26f8f33dca021c5cee0d8bc2f8b41b3b84))
 
 #### Tests
 
 -   hot-fix to fix failing unit tests on read-only systems
-    ([771a334](https://github.com/kapsner/autonewsmd.git/tree/771a33466c1e9a7940b9cd544299f696de7d87d0))
+    ([771a334](https://github.com/kapsner/autonewsmd/tree/771a33466c1e9a7940b9cd544299f696de7d87d0))
 -   increasing test coverage
-    ([c3b499d](https://github.com/kapsner/autonewsmd.git/tree/c3b499d8b9b3a3dff76baeaa2ee658e864ae846b))
+    ([c3b499d](https://github.com/kapsner/autonewsmd/tree/c3b499d8b9b3a3dff76baeaa2ee658e864ae846b))
 
 #### Docs
 
 -   documented con-argument of write
-    ([e37f63a](https://github.com/kapsner/autonewsmd.git/tree/e37f63a761e1cb38c69879c8627398bc3badbb82))
+    ([e37f63a](https://github.com/kapsner/autonewsmd/tree/e37f63a761e1cb38c69879c8627398bc3badbb82))
 -   added cran installation and cran badges
-    ([de3c6bc](https://github.com/kapsner/autonewsmd.git/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
+    ([de3c6bc](https://github.com/kapsner/autonewsmd/tree/de3c6bc2b5a958a8dd2f3d3efd02901a53731073))
 
 #### Other changes
 
 -   updated news.md
-    ([33cee50](https://github.com/kapsner/autonewsmd.git/tree/33cee507c8b2d4d933fa38c095d39394662ffbf6))
+    ([33cee50](https://github.com/kapsner/autonewsmd/tree/33cee507c8b2d4d933fa38c095d39394662ffbf6))
 
 Full set of changes:
-[`v0.0.1...v0.0.2`](https://github.com/kapsner/autonewsmd.git/compare/v0.0.1...v0.0.2)
+[`v0.0.1...v0.0.2`](https://github.com/kapsner/autonewsmd/compare/v0.0.1...v0.0.2)
 
 ## v0.0.1 (2022-08-27)
 
 #### Bug fixes
 
 -   addressing comments raised during the first submission to cran
-    ([fbab006](https://github.com/kapsner/autonewsmd.git/tree/fbab006658f4a26b4112e5413af5f3da88bd68bb))
+    ([fbab006](https://github.com/kapsner/autonewsmd/tree/fbab006658f4a26b4112e5413af5f3da88bd68bb))
 
 #### Tests
 
 -   fixing unit-tests on windows 3
-    ([03a28de](https://github.com/kapsner/autonewsmd.git/tree/03a28deb949360ca900b163166d3bc0de0ba8030))
+    ([03a28de](https://github.com/kapsner/autonewsmd/tree/03a28deb949360ca900b163166d3bc0de0ba8030))
 -   fixing unit-tests on windows 2
-    ([fafad0a](https://github.com/kapsner/autonewsmd.git/tree/fafad0ac6a6a55ea32eefbcab19952e5dffa14e3))
+    ([fafad0a](https://github.com/kapsner/autonewsmd/tree/fafad0ac6a6a55ea32eefbcab19952e5dffa14e3))
 -   fixing unit-tests on windows
-    ([f9e9a55](https://github.com/kapsner/autonewsmd.git/tree/f9e9a55d61ef13fd0e6ce0ac43d612dac8a33ac2))
+    ([f9e9a55](https://github.com/kapsner/autonewsmd/tree/f9e9a55d61ef13fd0e6ce0ac43d612dac8a33ac2))
 
 #### CI
 
 -   add libharfbuzz-dev libfribidi-dev dependencies
-    ([0c29e16](https://github.com/kapsner/autonewsmd.git/tree/0c29e16decfced092530918eb1411064c263754f))
+    ([0c29e16](https://github.com/kapsner/autonewsmd/tree/0c29e16decfced092530918eb1411064c263754f))
 -   added installation of libgit-dev to prerequisites
-    ([73b63ea](https://github.com/kapsner/autonewsmd.git/tree/73b63ea32d255e6f2b697124059e05c4affd9294))
+    ([73b63ea](https://github.com/kapsner/autonewsmd/tree/73b63ea32d255e6f2b697124059e05c4affd9294))
 
 #### Other changes
 
 -   added cran-comments.md
-    ([fe41b09](https://github.com/kapsner/autonewsmd.git/tree/fe41b09a48d99692139253a27b2281badf2710b5))
+    ([fe41b09](https://github.com/kapsner/autonewsmd/tree/fe41b09a48d99692139253a27b2281badf2710b5))
 -   updated description
-    ([18b5580](https://github.com/kapsner/autonewsmd.git/tree/18b558032c7cd5e8619afe7a1da6f0ddbc1fc9b5))
+    ([18b5580](https://github.com/kapsner/autonewsmd/tree/18b558032c7cd5e8619afe7a1da6f0ddbc1fc9b5))
 -   fixed typo in vignette
-    ([afe84f3](https://github.com/kapsner/autonewsmd.git/tree/afe84f3748e4c504b90f878c78e4edd2f6c76503))
+    ([afe84f3](https://github.com/kapsner/autonewsmd/tree/afe84f3748e4c504b90f878c78e4edd2f6c76503))
 -   updated badges in readme
-    ([2c5e126](https://github.com/kapsner/autonewsmd.git/tree/2c5e126abdb69978640166ced935601de406e025))
+    ([2c5e126](https://github.com/kapsner/autonewsmd/tree/2c5e126abdb69978640166ced935601de406e025))
 -   added news.md
-    ([5c182ee](https://github.com/kapsner/autonewsmd.git/tree/5c182eedbfd3dd26383aff59663c7e1ab6262973))
+    ([5c182ee](https://github.com/kapsner/autonewsmd/tree/5c182eedbfd3dd26383aff59663c7e1ab6262973))
 -   updated badges to main branch
-    ([7c967f3](https://github.com/kapsner/autonewsmd.git/tree/7c967f3424fdd88390792d3a3053902349974153))
+    ([7c967f3](https://github.com/kapsner/autonewsmd/tree/7c967f3424fdd88390792d3a3053902349974153))
 
 Full set of changes:
-[`1455a33...v0.0.1`](https://github.com/kapsner/autonewsmd.git/compare/1455a33...v0.0.1)
+[`1455a33...v0.0.1`](https://github.com/kapsner/autonewsmd/compare/1455a33...v0.0.1)
