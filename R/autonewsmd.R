@@ -310,7 +310,7 @@ autonewsmd <- R6::R6Class(
         if (is.null(con) && interactive()) {
           answer <- utils::askYesNo(
             msg = message(msg),
-            default = TRUE
+            default = NA
           )
         } else if (inherits(con, c("file", "connection"))) {
           # display prompt and options
