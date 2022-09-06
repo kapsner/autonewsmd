@@ -14,21 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-get_git_log <- function(repo, repo_url, tag_pattern) {
-
-  # mapping list for the conventional commit types
-  type_mappings <- list(
-    "feat: " = "New features",
-    "fix: " = "Bug fixes",
-    "refactor: " = "Refactorings",
-    "perf: " = "Performance",
-    "build: " = "Build",
-    "test: " = "Tests",
-    "ci: " = "CI",
-    "docs: " = "Docs",
-    "style: " = "Style",
-    "chore: " = "Other changes"
-  )
+get_git_log <- function(repo, repo_url, tag_pattern, type_mappings) {
 
   # load whole git-history into a data.table
   repo_df <- git2r::as.data.frame(repo) %>%

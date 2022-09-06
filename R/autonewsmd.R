@@ -220,7 +220,8 @@ autonewsmd <- R6::R6Class(
       self$repo_list <- get_git_log(
         repo = private$repo,
         repo_url = private$repo_url,
-        tag_pattern = self$tag_pattern
+        tag_pattern = self$tag_pattern,
+        type_mappings = type_mappings
       )
     },
 
@@ -348,6 +349,19 @@ autonewsmd <- R6::R6Class(
   private = list(
     repo = NULL,
     repo_url = NULL,
-    repo_path = NULL
+    repo_path = NULL,
+    # mapping list for the conventional commit types
+    type_mappings = list(
+      "feat: " = "New features",
+      "fix: " = "Bug fixes",
+      "refactor: " = "Refactorings",
+      "perf: " = "Performance",
+      "build: " = "Build",
+      "test: " = "Tests",
+      "ci: " = "CI",
+      "docs: " = "Docs",
+      "style: " = "Style",
+      "chore: " = "Other changes"
+    )
   )
 )
