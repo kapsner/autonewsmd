@@ -221,7 +221,7 @@ autonewsmd <- R6::R6Class(
         repo = private$repo,
         repo_url = private$repo_url,
         tag_pattern = self$tag_pattern,
-        type_mappings = type_mappings
+        type_mappings = private$type_mappings
       )
     },
 
