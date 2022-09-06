@@ -2,6 +2,11 @@
 
 ## Unreleased (2022-09-06)
 
+#### Bug fixes
+
+-   fixed reference to type\_mappings in private
+    ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
+
 #### Refactorings
 
 -   default interactive answer to na
@@ -16,11 +21,15 @@
 
 #### Other changes
 
+-   updated description
+    ([73c93e6](https://github.com/kapsner/autonewsmd/tree/73c93e6afc3f8e542abf5e91ba9c322020a7e5a2))
+-   updated description
+    ([6d7cc1f](https://github.com/kapsner/autonewsmd/tree/6d7cc1f45359163d2b592b0958c5f610078e4aa9))
 -   updated news.md
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...9962291`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...9962291)
+[`v0.0.3...73c93e6`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...73c93e6)
 
 ## v0.0.3 (2022-09-03)
 
