@@ -104,6 +104,9 @@ autonewsmd <- R6::R6Class(
     #' Create a new `autonewsmd` object.
     #' @param repo_name A character. The name of the repository, which is
     #'   inserted into the title of the changelog file.
+    #' @param repo_remotes A character. The name of the tracked repository that
+    #'   should be used to get the repository's URL (e.g. when executing
+    #'   `git remote -v` in the shell). Defaults to `NULL`.
     #' @param repo_path A character. The path of the repository to create a new
     #'   changelog for. If `NULL` (the default), it will point automatically to
     #'   to `"."`.
@@ -146,9 +149,18 @@ autonewsmd <- R6::R6Class(
     #' ## now construct a new autonewsmd object
     #' an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
     #'
-    initialize = function(repo_name, repo_path = NULL) {
+    initialize = function(
+      repo_name,
+      repo_remotes = NULL,
+      repo_path = NULL
+    ) {
       stopifnot(
         is.character(repo_name),
+        ifelse(
+          test = is.null(repo_remotes),
+          yes = TRUE,
+          no = is.character(repo_remotes)
+        ),
         ifelse(
           test = is.null(repo_path),
           yes = TRUE,
@@ -164,7 +176,15 @@ autonewsmd <- R6::R6Class(
       self$repo_name <- repo_name
       private$repo_path <- normalizePath(repo_path)
       private$repo <- git2r::repository(path = private$repo_path)
-      private$repo_url <- git2r::remote_url(private$repo)
+      repo_url <- git2r::remote_url(
+        repo = private$repo,
+        remote = repo_remotes
+      )
+      private$repo_url <- gsub(
+        pattern = "\\.git$",
+        replacement = "",
+        x = repo_url
+      )
     },
 
     #' @description

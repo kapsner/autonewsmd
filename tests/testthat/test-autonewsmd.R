@@ -64,7 +64,11 @@ test_that("correct functioning of autonewsmd", {
   git2r::commit(repo, "refactor: added second phrase")
 
   #### work with autonewsmd
-  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  an <- autonewsmd$new(
+    repo_name = "TestRepo",
+    repo_remotes = "foobar",
+    repo_path = path
+  )
 
   # test for write() before generate()
   expect_error(

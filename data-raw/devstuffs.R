@@ -19,7 +19,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.3.9002")
+my_desc$set_version("0.0.3.9003")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package

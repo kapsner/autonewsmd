@@ -16,6 +16,8 @@
 
 #### Docs
 
+-   ref to readme in vignette
+    ([ac12080](https://github.com/kapsner/autonewsmd/tree/ac12080678bbf3f35a62c5b71ec71ef9af870de1))
 -   table with commit types and section related packages
     ([98fb4b1](https://github.com/kapsner/autonewsmd/tree/98fb4b1d678c224326833452bf6098ca9459e429))
 
@@ -29,7 +31,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...73c93e6`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...73c93e6)
+[`v0.0.3...ac12080`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...ac12080)
 
 ## v0.0.3 (2022-09-03)
 

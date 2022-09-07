@@ -224,7 +224,7 @@ changelog should be written to. Defaults to `".md"`.}
 \subsection{Method \code{new()}}{
 Create a new `autonewsmd` object.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$new(repo_name, repo_path = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{autonewsmd$new(repo_name, repo_remotes = NULL, repo_path = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -232,6 +232,10 @@ Create a new `autonewsmd` object.
 \describe{
 \item{\code{repo_name}}{A character. The name of the repository, which is
 inserted into the title of the changelog file.}
+
+\item{\code{repo_remotes}}{A character. The name of the tracked repository that
+should be used to get the repository's URL (e.g. when executing
+`git remote -v` in the shell). Defaults to `NULL`.}
 
 \item{\code{repo_path}}{A character. The path of the repository to create a new
 changelog for. If `NULL` (the default), it will point automatically to
