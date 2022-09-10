@@ -1,6 +1,11 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-06)
+## Unreleased (2022-09-07)
+
+#### New features
+
+-   add option to set remote tracking repo
+    ([57263db](https://github.com/kapsner/autonewsmd/tree/57263dbc4f12387ce4371e005b961ae661606e0a))
 
 #### Bug fixes
 
@@ -31,7 +36,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...ac12080`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...ac12080)
+[`v0.0.3...57263db`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...57263db)
 
 ## v0.0.3 (2022-09-03)
 

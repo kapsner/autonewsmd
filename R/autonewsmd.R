@@ -154,37 +154,7 @@ autonewsmd <- R6::R6Class(
       repo_remotes = NULL,
       repo_path = NULL
     ) {
-      stopifnot(
-        is.character(repo_name),
-        ifelse(
-          test = is.null(repo_remotes),
-          yes = TRUE,
-          no = is.character(repo_remotes)
-        ),
-        ifelse(
-          test = is.null(repo_path),
-          yes = TRUE,
-          no = is.character(repo_path) && dir.exists(repo_path)
-        )
-      )
-      if (is.null(repo_path)) {
-        message(
-          "No 'repo_path' provided. Setting 'repo_path' to '.'."
-        )
-        repo_path <- "."
-      }
-      self$repo_name <- repo_name
-      private$repo_path <- normalizePath(repo_path)
-      private$repo <- git2r::repository(path = private$repo_path)
-      repo_url <- git2r::remote_url(
-        repo = private$repo,
-        remote = repo_remotes
-      )
-      private$repo_url <- gsub(
-        pattern = "\\.git$",
-        replacement = "",
-        x = repo_url
-      )
+      init_autonewsmd(self, private, repo_name, repo_remotes, repo_path)
     },
 
     #' @description
@@ -237,12 +207,7 @@ autonewsmd <- R6::R6Class(
     #' an$generate()
     #'
     generate = function() {
-      self$repo_list <- get_git_log(
-        repo = private$repo,
-        repo_url = private$repo_url,
-        tag_pattern = self$tag_pattern,
-        type_mappings = private$type_mappings
-      )
+      generate_autonewsmd(self, private)
     },
 
     #' @description
@@ -303,66 +268,7 @@ autonewsmd <- R6::R6Class(
     #' }
     #'
     write = function(force = FALSE, con = NULL) {
-      stopifnot(
-        !is.null(self$repo_list),
-        !is.null(private$repo_url),
-        is.logical(force)
-      )
-
-      if (isFALSE(force)) {
-        full_path <- file.path(
-          private$repo_path,
-          paste0(self$file_name, self$file_ending)
-        )
-        msg <- paste0(
-          "Do you want to write the file '", full_path, "'?"
-        )
-        if (file.exists(full_path)) {
-          msg <- paste(
-            msg, "CAUTION: this overwrites the existing file!",
-            sep = "\n"
-          )
-        }
-        msg <- paste(
-          msg, "(Use `force = TRUE` to omit this interactive question.)",
-          sep = "\n"
-        )
-        if (is.null(con) && interactive()) {
-          answer <- utils::askYesNo(
-            msg = message(msg),
-            default = NA
-          )
-        } else if (inherits(con, c("file", "connection"))) {
-          # display prompt and options
-          optlist <- paste(c("Yes", "no", "cancel"), collapse = "/")
-          prompt_opt <- paste0(msg, " (", optlist, ")\n")
-          message(prompt_opt)
-          read_con <- readLines(con = con, n = 1)
-          if (read_con %in% c("Yes", "yes", "y", "ye")) {
-            answer <- TRUE
-          } else {
-            answer <- FALSE
-          }
-        } else {
-          stop(paste0(
-            "Please provide a valid connection containing the ",
-            "answer to the interactive question, if the newly generated ",
-            "changelog file should be written to the file system."
-          ))
-        }
-
-        if (!isTRUE(answer)) {
-          return(invisible())
-        }
-      }
-      markdown_render(
-        repo_list = self$repo_list,
-        repo_url = private$repo_url,
-        repo_name = self$repo_name,
-        repo_path = private$repo_path,
-        file_name = self$file_name,
-        file_ending = self$file_ending
-      )
+      write_autonewsmd(self, private, force, con)
     }
   ),
 

@@ -14,7 +14,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-get_git_log <- function(repo, repo_url, tag_pattern, type_mappings) {
+generate_autonewsmd <- function(self, private) {
+
+  repo <- private$repo
+  repo_url <- private$repo_url
+  tag_pattern <- self$tag_pattern
+  type_mappings <- private$type_mappings
 
   # load whole git-history into a data.table
   repo_df <- git2r::as.data.frame(repo) %>%
@@ -32,7 +37,7 @@ get_git_log <- function(repo, repo_url, tag_pattern, type_mappings) {
     pattern <- paste0("^", tm)
     repo_df[
       grepl(pattern = pattern, x = get("summary")),
-      `:=` (
+      `:=` ( # nolint
         # set the human readable type, used as subheadings
         "type" = type_mappings[tm],
         # clean up the commit summary
@@ -176,5 +181,5 @@ get_git_log <- function(repo, repo_url, tag_pattern, type_mappings) {
     }
     repo_list[[tn]] <- append_list
   }
-  return(repo_list)
+  self$repo_list <- repo_list
 }

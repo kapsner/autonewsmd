@@ -24,31 +24,11 @@ change_hierarchy <- c(
 
 ```{r results='asis', echo=FALSE}
 #| results: asis
-for (tag in names(repo_list)) {
-  rl <- repo_list[[tag]]
-  cat(paste0("\n## ", tag, " (", rl[["latest_date"]], ")"), "\n\n")
-  for (chg in change_hierarchy) {
-    # get commits of type with a clean summary (ensuring formatting according
-    # to conventional commit style)
-    chg_commits <- rl$commits[
-      get("type") == chg & !is.na(get("clean_summary")),
-    ]
-    if (nrow(chg_commits) > 0) {
-      cat(paste0("\n#### ", chg), "\n\n")
-      for (chg_row in seq_len(nrow(chg_commits))) {
-        # create commit list
-        cat(paste0(
-          "- ", chg_commits[chg_row, get("clean_summary")], " ([",
-          chg_commits[chg_row, get("sha_seven")], "](",
-          file.path(repo_url, "tree", chg_commits[chg_row, get("sha")]), "))"
-        ), "\n")
-      }
-    }
-  }
-  if (!is.null(rl[["full_changes"]])) {
-    cat("\n", rl[["full_changes"]], "\n\n")
-  }
-}
+mdtemplate_tags_decreasing(
+  repo_list = repo_list,
+  change_hierarchy = change_hierarchy,
+  repo_url = repo_url
+)
 ```
 
 
