@@ -156,6 +156,49 @@ test_that("correct functioning of autonewsmd", {
     regexp = "The 'path' is not in a git repository"
   )
 
+  # check breaking changes
+  lines3 <- paste0(
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines3, file.path(path, "example.txt"), append = TRUE)
+
+  git2r::add(repo, "example.txt")
+  Sys.sleep(2) # wait two seconds, otherwise, commit messages have same
+  # time stamp
+  git2r::commit(repo, "fix!: added third phrase")
+  an <- autonewsmd$new(
+    repo_name = "TestRepo",
+    repo_remotes = "foobar",
+    repo_path = path
+  )
+  an$tag_pattern <- "^r(\\d+\\.){2}\\d+(\\.\\d+)?$"
+  an$generate()
+
+  expect_equal(
+    object = an$repo_list$Unreleased$commits[
+      grepl("third", get("clean_summary")),
+      get("type")
+    ][[1]],
+    expected = "Breaking changes"
+  )
+
+
+  write(lines3, file.path(path, "example.txt"), append = TRUE)
+
+  git2r::add(repo, "example.txt")
+  Sys.sleep(2) # wait two seconds, otherwise, commit messages have same
+  # time stamp
+  git2r::commit(repo, "fix(deps)!: added fourth phrase")
+  an$generate()
+
+  expect_equal(
+    object = an$repo_list$Unreleased$commits[
+      grepl("fourth", get("clean_summary")),
+      get("type")
+    ][[1]],
+    expected = "Breaking changes"
+  )
 
   # clean up
   unlink(path2, recursive = TRUE)
