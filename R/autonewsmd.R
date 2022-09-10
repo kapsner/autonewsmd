@@ -278,16 +278,16 @@ autonewsmd <- R6::R6Class(
     repo_path = NULL,
     # mapping list for the conventional commit types
     type_mappings = list(
-      "feat: " = "New features",
-      "fix: " = "Bug fixes",
-      "refactor: " = "Refactorings",
-      "perf: " = "Performance",
-      "build: " = "Build",
-      "test: " = "Tests",
-      "ci: " = "CI",
-      "docs: " = "Docs",
-      "style: " = "Style",
-      "chore: " = "Other changes"
+      "feat" = "New features",
+      "fix" = "Bug fixes",
+      "refactor" = "Refactorings",
+      "perf" = "Performance",
+      "build" = "Build",
+      "test" = "Tests",
+      "ci" = "CI",
+      "docs" = "Docs",
+      "style" = "Style",
+      "chore" = "Other changes"
     )
   )
 )

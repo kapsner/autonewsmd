@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-07)
+## Unreleased (2022-09-10)
 
 #### New features
 
@@ -14,6 +14,8 @@
 
 #### Refactorings
 
+-   streamlining r6-code
+    ([5e76f61](https://github.com/kapsner/autonewsmd/tree/5e76f611cd1d65600e4050bc33a65bedfb7352df))
 -   default interactive answer to na
     ([9962291](https://github.com/kapsner/autonewsmd/tree/9962291181d1e78baba06a6748ab3a64cbab5ae2))
 -   commit types to private
@@ -36,7 +38,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...57263db`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...57263db)
+[`v0.0.3...5e76f61`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...5e76f61)
 
 ## v0.0.3 (2022-09-03)
 

@@ -34,7 +34,7 @@ generate_autonewsmd <- function(self, private) {
 
   # identify the conventional commits
   for (tm in names(type_mappings)) {
-    pattern <- paste0("^", tm)
+    pattern <- paste0("^", tm, "(\\(\\w*\\))?(\\!)?: ")
     repo_df[
       grepl(pattern = pattern, x = get("summary")),
       `:=` ( # nolint
@@ -48,11 +48,17 @@ generate_autonewsmd <- function(self, private) {
         )
       )
     ]
+    # check for breaking changes
+    pattern_bc <- paste0("^", tm, "(\\(\\w*\\))?\\!: ")
+    n_bc <- grepl(pattern = pattern_bc, x = repo_df[, get("summary")])
+    if (sum(n_bc) > 0) {
+      repo_df[n_bc, ("type") := "Breaking changes"]
+    }
   }
 
-  # rewrite breaking changes
+  # rewrite breaking changes, if the are only mentioned in the message
   repo_df[
-    grepl(pattern = "^BREAKING CHANGE: ", x = get("message")),
+    grepl(pattern = "BREAKING CHANGE: ", x = get("message")),
     ("type") := "Breaking changes"
   ]
 
