@@ -23,6 +23,11 @@
 -   commit types to private
     ([e16c7da](https://github.com/kapsner/autonewsmd/tree/e16c7daad2daee2772efda449f067ced3a40f8bf))
 
+#### Tests
+
+-   add unittest for breaking changes
+    ([f6fcfa5](https://github.com/kapsner/autonewsmd/tree/f6fcfa5646b7f8b01bb2affce0e5d8ca0b430c96))
+
 #### Docs
 
 -   ref to readme in vignette
@@ -40,7 +45,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...22c8ea8`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...22c8ea8)
+[`v0.0.3...f6fcfa5`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...f6fcfa5)
 
 ## v0.0.3 (2022-09-03)
 
