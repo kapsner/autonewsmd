@@ -53,7 +53,7 @@ The default changelog template organizes commits according to their association 
 
 </center>
 
-If any commit type includes `BREAKING CHANGE` in its commit body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections.
+If any commit type includes `BREAKING CHANGE` in its commit message's body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections.
 
 ## Example
 
