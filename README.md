@@ -15,7 +15,7 @@
 
 The purpose of the `autonewsmd` R package is to bring the power of conventional commit messages to the R community. There is no need anymore to tediously maintain a changelog file manually. If you are using conventional commit messages, `autonewsmd` will do that for you and automatically generate a human readable changelog file directly from the repository's git history.
 
-Conventional commit messages ([https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)) come with some easy rules to create human readable commit messages for a git history. One advantage is that following these conventions, these messages are also machine readable and automated tools can run on top of them in order to, e.g., generate beautiful changelogs out of them. Similar tools for other languages are, for example, [`auto-changelog`](https://github.com/cookpete/auto-changelog) for JavaScript and [`auto-changelog`](https://github.com/KeNaCo/auto-changelog) for Python.
+Conventional commit messages ([https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)) come with some easy rules to create human readable commit messages for a git history. One advantage is that following these conventions, these messages are also machine readable and automated tools can run on top of them in order to, e.g., generate beautiful changelogs out of them. Similar tools written in other programming languages are, for example, [`auto-changelog`](https://github.com/cookpete/auto-changelog) for JavaScript and [`auto-changelog`](https://github.com/KeNaCo/auto-changelog) for Python.
 
 ## Installation
 
