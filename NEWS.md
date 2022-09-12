@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-10)
+## Unreleased (2022-09-11)
 
 #### New features
 
@@ -30,6 +30,10 @@
 
 #### Docs
 
+-   specifying bc in readme
+    ([7e04e68](https://github.com/kapsner/autonewsmd/tree/7e04e6861f52ad28994a8a3d2b2fa77cfba635da))
+-   updated readme
+    ([47188a7](https://github.com/kapsner/autonewsmd/tree/47188a747936f6f08524b91acb90845c7dfb9856))
 -   ref to readme in vignette
     ([ac12080](https://github.com/kapsner/autonewsmd/tree/ac12080678bbf3f35a62c5b71ec71ef9af870de1))
 -   table with commit types and section related packages
@@ -37,6 +41,8 @@
 
 #### Other changes
 
+-   updated news.md
+    ([a7c257b](https://github.com/kapsner/autonewsmd/tree/a7c257b288092a4f29fdd992639668aa9ca51d3b))
 -   updated description
     ([73c93e6](https://github.com/kapsner/autonewsmd/tree/73c93e6afc3f8e542abf5e91ba9c322020a7e5a2))
 -   updated description
@@ -45,7 +51,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...f6fcfa5`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...f6fcfa5)
+[`v0.0.3...7e04e68`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...7e04e68)
 
 ## v0.0.3 (2022-09-03)
 

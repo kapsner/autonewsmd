@@ -26,11 +26,6 @@
 #'   repository, which needs at least to be provided when constructing a new
 #'   changelog file.
 #'
-#' @import data.table
-#' @import R6
-#' @importFrom magrittr "%>%"
-#' @importFrom utils askYesNo
-#'
 #' @examples
 #' # (Example is based on the public examples from the `git2r` R package)
 #' ## Initialize a repository

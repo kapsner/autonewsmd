@@ -1,6 +1,6 @@
 Package: autonewsmd
 Title: Auto-Generate Changelog using Conventional Commits
-Version: 0.0.3.9005
+Version: 0.0.3.9006
 Authors@R: 
     person("Lorenz A.", "Kapsner", , "lorenz.kapsner@gmail.com", role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0003-1866-860X"))
@@ -25,6 +25,6 @@ Suggests:
     testthat (>= 3.0.1)
 VignetteBuilder: 
     knitr
-Date/Publication: 2022-09-10 20:55:34 UTC
+Date/Publication: 2022-09-12 10:14:25 UTC
 Encoding: UTF-8
 RoxygenNote: 7.2.1
