@@ -1,5 +1,5 @@
 ## tic GitHub Actions template: linux-macos-windows-deploy
-## revision date: 2020-05-21
+## revision date: 2022-08-28
 on:
   push:
   pull_request:
@@ -27,37 +27,24 @@ jobs:
           - { os: ubuntu-latest, r: "devel", pkgdown: "true", latex: "true", java: "false" }
 
     env:
-      # otherwise remotes::fun() errors cause the build to fail. Example: Unavailability of binaries
-      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
-      CRAN: ${{ matrix.config.cran }}
-      # we are not allowed to write to ~/.ccache on GH Actions
-      # setting some ccache options
-      CCACHE_BASEDIR: ${{ GITHUB.WORKSPACE }}
-      CCACHE_DIR: ${{ GITHUB.WORKSPACE }}/.ccache
-      CCACHE_NOHASHDIR: true
-      CCACHE_SLOPPINESS: include_file_ctime
+      # make sure to run `tic::use_ghactions_deploy()` to set up deployment
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
       # prevent rgl issues because no X11 display is available
       RGL_USE_NULL: true
       # if you use bookdown or blogdown, replace "PKGDOWN" by the respective
       # capitalized term. This also might need to be done in tic.R
       BUILD_PKGDOWN: ${{ matrix.config.pkgdown }}
-      # macOS >= 10.15.4 linking
-      SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
           Ncpus: 4
 
-      # LaTeX. Installation time:
-      # Linux: ~ 1 min
-      # macOS: ~ 1 min 30s
-      # Windows: never finishes
       - uses: r-lib/actions/setup-tinytex@v2
         if: matrix.config.latex == 'true'
         env:
@@ -82,39 +69,40 @@ jobs:
 
       - name: "[Cache] Cache R packages"
         if: runner.os != 'Windows'
-        uses: pat-s/always-upload-cache@main
+        uses: pat-s/always-upload-cache@v3
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}
 
-      # for some strange Windows reason this step and the next one need to be decoupled
-      - name: "[Stage] Prepare"
-        run: |
-          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
-          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
-      - name: "[Stage] [Linux] Install curl"
-        if: runner.os == 'Linux'
-        run: sudo apt install libcurl4-openssl-dev libgit2-dev libharfbuzz-dev libfribidi-dev
-
       - name: "[Stage] Configure R Java"
         if: runner.os != 'Windows' && matrix.config.java == 'true'
         run: "echo export PATH=$PATH > reconf.sh; echo export JAVA_HOME=$JAVA_HOME >> reconf.sh; echo R CMD javareconf >> reconf.sh; sudo bash reconf.sh"
+        
+      - name: "[Stage] Install pak"
+        run: Rscript -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable')"
 
       - name: "[Stage] Install"
-        if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
-        run: Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+        run: Rscript -e "if (grepl('Ubuntu', Sys.info()[['version']]) && !grepl('Under development', R.version[['status']])) {options(repos = c(CRAN = sprintf('https://packagemanager.rstudio.com/all/__linux__/%s/latest', system('lsb_release -cs', intern = TRUE))))}else{options(repos = c(CRAN = 'cloud.r-project.org'))}; pak::pkg_install('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
 
       - name: "[Stage] Script"
         run: Rscript -e 'tic::script()'
 
       - name: "[Stage] After Success"
-        if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
         run: Rscript -e "tic::after_success()"
 
       - name: "[Stage] Upload R CMD check artifacts"
         if: failure()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
+      - name: "[Stage] Before Deploy"
+        run: |
+          Rscript -e "tic::before_deploy()"
+
+      - name: "[Stage] Deploy"
+        run: Rscript -e "tic::deploy()"
+
+      - name: "[Stage] After Deploy"
+        run: Rscript -e "tic::after_deploy()"
