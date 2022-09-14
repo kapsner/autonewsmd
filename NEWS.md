@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-11)
+## Unreleased (2022-09-14)
 
 #### New features
 
@@ -28,8 +28,15 @@
 -   add unittest for breaking changes
     ([f6fcfa5](https://github.com/kapsner/autonewsmd/tree/f6fcfa5646b7f8b01bb2affce0e5d8ca0b430c96))
 
+#### CI
+
+-   updated tic.yml
+    ([1008601](https://github.com/kapsner/autonewsmd/tree/1008601607514c6ed4a6b0f3088aa0a503935158))
+
 #### Docs
 
+-   updated vignette and readme
+    ([a8ad163](https://github.com/kapsner/autonewsmd/tree/a8ad163778ec524ce3cf21df026d1f26fd4a6086))
 -   specifying bc in readme
     ([7e04e68](https://github.com/kapsner/autonewsmd/tree/7e04e6861f52ad28994a8a3d2b2fa77cfba635da))
 -   updated readme
@@ -41,6 +48,8 @@
 
 #### Other changes
 
+-   importfrom and import statements to zzz.r file
+    ([0a6072c](https://github.com/kapsner/autonewsmd/tree/0a6072c3f70542858ece2aa66c8b8760a2cef25c))
 -   updated news.md
     ([a7c257b](https://github.com/kapsner/autonewsmd/tree/a7c257b288092a4f29fdd992639668aa9ca51d3b))
 -   updated description
@@ -51,7 +60,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...7e04e68`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...7e04e68)
+[`v0.0.3...a8ad163`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...a8ad163)
 
 ## v0.0.3 (2022-09-03)
 
