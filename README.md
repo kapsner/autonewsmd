@@ -34,7 +34,7 @@ remotes::install_github("kapsner/autonewsmd")
 
 ## Supported Commit Types
 
-The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formating of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/).
+The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formatting of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/).
 
 <center>
 

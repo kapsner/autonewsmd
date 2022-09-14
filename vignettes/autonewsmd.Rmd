@@ -22,6 +22,29 @@ The purpose of the `autonewsmd` R package is to bring the power of conventional 
 
 Conventional commit messages ([https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)) come with some easy rules to create human readable commit messages for a git history. One advantage is that following these conventions, these messages are also machine readable and automated tools can run on top of them in order to, e.g., generate beautiful changelogs out of them. Similar tools for other languages are, for example, [`auto-changelog`](https://github.com/cookpete/auto-changelog) for JavaScript and [`auto-changelog`](https://github.com/KeNaCo/auto-changelog) for Python.
 
+## Supported Commit Types
+
+The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formatting of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/).
+
+<center>
+
+| Type      | Changelog Subheading |
+| --------- | -------------------- |
+| feat:     | New features         |
+| fix:      | Bug fixes            |
+| refactor: | Refactorings         |
+| perf:     | Performance          |
+| build:    | Build                |
+| test:     | Tests                |
+| ci:       | CI                   |
+| docs:     | Docs                 |
+| style:    | Style                |
+| chore:    | Other changes        |
+
+</center>
+
+If any commit type includes `BREAKING CHANGE` in its commit message's body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections.
+
 Please also refer to the [`README`](https://github.com/kapsner/autonewsmd#autonewsmd) for further information.
 
 ## Example
