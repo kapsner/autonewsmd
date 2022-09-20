@@ -99,12 +99,12 @@ autonewsmd <- R6::R6Class(
     #' Create a new `autonewsmd` object.
     #' @param repo_name A character. The name of the repository, which is
     #'   inserted into the title of the changelog file.
-    #' @param repo_remotes A character. The name of the tracked repository that
-    #'   should be used to get the repository's URL (e.g. when executing
-    #'   `git remote -v` in the shell). Defaults to `NULL`.
     #' @param repo_path A character. The path of the repository to create a new
     #'   changelog for. If `NULL` (the default), it will point automatically to
     #'   to `"."`.
+    #' @param repo_remotes A character. The name of the tracked repository that
+    #'   should be used to get the repository's URL (e.g. when executing
+    #'   `git remote -v` in the shell). Defaults to `NULL`.
     #' @return A new `autonewsmd` object.
     #'
     #' @examples
@@ -146,10 +146,10 @@ autonewsmd <- R6::R6Class(
     #'
     initialize = function(
       repo_name,
-      repo_remotes = NULL,
-      repo_path = NULL
+      repo_path = NULL,
+      repo_remotes = NULL
     ) {
-      init_autonewsmd(self, private, repo_name, repo_remotes, repo_path)
+      init_autonewsmd(self, private, repo_name, repo_path, repo_remotes)
     },
 
     #' @description

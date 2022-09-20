@@ -48,6 +48,8 @@
 
 #### Other changes
 
+-   updated news.md
+    ([1bd7b58](https://github.com/kapsner/autonewsmd/tree/1bd7b58f6c072f1f05aead7eb62d65f63c113d7b))
 -   importfrom and import statements to zzz.r file
     ([0a6072c](https://github.com/kapsner/autonewsmd/tree/0a6072c3f70542858ece2aa66c8b8760a2cef25c))
 -   updated news.md
@@ -60,7 +62,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...a8ad163`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...a8ad163)
+[`v0.0.3...1bd7b58`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...1bd7b58)
 
 ## v0.0.3 (2022-09-03)
 

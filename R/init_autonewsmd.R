@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-init_autonewsmd <- function(self, private, repo_name, repo_remotes, repo_path) {
+init_autonewsmd <- function(self, private, repo_name, repo_path, repo_remotes) {
   stopifnot(
     is.character(repo_name),
     ifelse(
