@@ -117,10 +117,14 @@ generate_autonewsmd <- function(self, private) {
     }
   }
 
-  # add a before-tag to each commit that indicates to which tag the previous
-  # commit belongs; this is necessary to get the information on the full set
-  # of changes between two releases
-  repo_df[, ("tag_before") := c(repo_df$tag[2:nrow(repo_df)], NA_character_)]
+  if (length(repo_tags) > 0 || nrow(repo_df) > 1) {
+    # add a before-tag to each commit that indicates to which tag the previous
+    # commit belongs; this is necessary to get the information on the full set
+    # of changes between two releases
+    repo_df[, ("tag_before") := c(repo_df$tag[2:nrow(repo_df)], NA_character_)]
+  } else {
+    repo_df[, ("tag_before") := NA_character_]
+  }
 
   # create the repo-list that builds the data model for writing the changelog
   # file
