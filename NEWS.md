@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-14)
+## Unreleased (2022-09-20)
 
 #### New features
 
@@ -11,6 +11,8 @@
 
 #### Bug fixes
 
+-   fixed issue when only one commit available
+    ([1c323d1](https://github.com/kapsner/autonewsmd/tree/1c323d115274b09fe9e05695ed95a89084a3cd6a))
 -   fixed reference to type\_mappings in private
     ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
 
@@ -48,6 +50,8 @@
 
 #### Other changes
 
+-   changed order of init arguments
+    ([5982a02](https://github.com/kapsner/autonewsmd/tree/5982a0207528b11c1349d3dce2adfa5fc6293334))
 -   updated news.md
     ([1bd7b58](https://github.com/kapsner/autonewsmd/tree/1bd7b58f6c072f1f05aead7eb62d65f63c113d7b))
 -   importfrom and import statements to zzz.r file
@@ -62,7 +66,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...1bd7b58`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...1bd7b58)
+[`v0.0.3...1c323d1`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...1c323d1)
 
 ## v0.0.3 (2022-09-03)
 
