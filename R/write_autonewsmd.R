@@ -100,8 +100,8 @@ write_autonewsmd <- function(self, private, force, con) {
     input = template_file,
     output_file = I(paste0(file_name, file_ending)),
     output_dir = repo_path
-    #, intermediates_dir = tempdir()
-    #, knit_root_dir = tempdir()
+    #%, intermediates_dir = tempdir()
+    #%, knit_root_dir = tempdir()
   )
 
   invisible(file.remove(template_file))

@@ -34,7 +34,7 @@ remotes::install_github("kapsner/autonewsmd")
 
 ## Supported Commit Types
 
-The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formatting of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/).
+The default changelog template organizes commits according to their association with specific tags. The tags form the headings of the changelog file and are sorted in decreasing order according to their release dates. The following table lists the commit types that are currently supported by `autonewsmd`. To be correctly recognized by `autonewsmd`, it is important that the formatting of the commit messages follow the conventions described [here](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with--to-draw-attention-to-breaking-change).
 
 <center>
 
@@ -53,7 +53,7 @@ The default changelog template organizes commits according to their association 
 
 </center>
 
-If any commit type includes `BREAKING CHANGE` in its commit message's body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections.
+If any commit type includes `BREAKING CHANGE` in its commit message's body or footer, the subheading **`Breaking changes`** is included as first subheading within the respective sections. Furthermore, the detection of breaking changes using the exclamation mark (`!`) between the type description and the colon (as described [here](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with--to-draw-attention-to-breaking-change)) is supported as well.
 
 ## Example
 
@@ -151,6 +151,5 @@ newsmd
 
 - add options to format the changelog
 - add more changelog style templates
-- add support for [Commit message with ! to draw attention to breaking change](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with--to-draw-attention-to-breaking-change)
 - add support for [Commit message with scope](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
 - switch rendering of md to quarto -> challenges: currently, quarto does not allow to pass objects from the environment to the document that is rendered; hence, one needs to find a solution how to pass the `repo_list`, which is created in the `get_git_log` function (as well as some other objects) on to the *.qmd file for properly rendering the document.
