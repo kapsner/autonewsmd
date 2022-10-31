@@ -1,9 +1,11 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-10-15)
+## v0.0.4 (2022-10-31)
 
 #### New features
 
+-   finalizing support for breaking changes
+    ([214ebf5](https://github.com/kapsner/autonewsmd/tree/214ebf5fd07cad4a1b8556bd18272c3432b5bf6e))
 -   add support for breaking changes in commit summary
     ([22c8ea8](https://github.com/kapsner/autonewsmd/tree/22c8ea87e0618979d2453dccd5483805a117929d))
 -   add option to set remote tracking repo
@@ -68,7 +70,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...9cce1c8`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...9cce1c8)
+[`v0.0.3...v0.0.4`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...v0.0.4)
 
 ## v0.0.3 (2022-09-03)
 
