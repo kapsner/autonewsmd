@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-09-20)
+## Unreleased (2022-10-15)
 
 #### New features
 
@@ -50,6 +50,8 @@
 
 #### Other changes
 
+-   updated readme
+    ([9cce1c8](https://github.com/kapsner/autonewsmd/tree/9cce1c8a3304cec9cceaaf30573b51c516042462))
 -   changed order of init arguments
     ([5982a02](https://github.com/kapsner/autonewsmd/tree/5982a0207528b11c1349d3dce2adfa5fc6293334))
 -   updated news.md
@@ -66,7 +68,7 @@
     ([05c8f4c](https://github.com/kapsner/autonewsmd/tree/05c8f4c3eb7ae38ff6eed8ac9c5c6349489f13d2))
 
 Full set of changes:
-[`v0.0.3...1c323d1`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...1c323d1)
+[`v0.0.3...9cce1c8`](https://github.com/kapsner/autonewsmd/compare/v0.0.3...9cce1c8)
 
 ## v0.0.3 (2022-09-03)
 
