@@ -138,9 +138,9 @@ newsmd
 
 ## Used By 
 
-**(If you are using `autonewsmd` and you like to have your repository listed here, please add the link pointing to the changelog file to this [`README.md`](./README.md) and create a pull request.)**
+[autonewsmd](https://github.com/kapsner/autonewsmd/blob/main/NEWS.md), [sjtable2df](https://github.com/kapsner/sjtable2df/blob/main/NEWS.md), [DIZtools](https://github.com/miracum/misc-diztools/blob/main/NEWS.md), [DIZutils](https://github.com/miracum/misc-dizutils/blob/master/NEWS.md), [DQAstats](https://github.com/miracum/dqa-dqastats/blob/master/NEWS.md), [DQAgui](https://github.com/miracum/dqa-dqagui/blob/master/NEWS.md), [miRacumDQA](https://github.com/miracum/dqa-miracumdqa/blob/master/NEWS.md), [kdry](https://github.com/kapsner/kdry/blob/main/NEWS.md), [mlexperiments](https://github.com/kapsner/mlexperiments/blob/main/NEWS.md), [mllrnrs](https://github.com/kapsner/mllrnrs/blob/main/NEWS.md), [mlsurvlrnrs](https://github.com/kapsner/mlsurvlrnrs/blob/main/NEWS.md)
 
-[autonewsmd](https://github.com/kapsner/autonewsmd/blob/main/NEWS.md), [sjtable2df](https://github.com/kapsner/sjtable2df/blob/main/NEWS.md), [DIZtools](https://github.com/miracum/misc-diztools/blob/main/NEWS.md), [DIZutils](https://github.com/miracum/misc-dizutils/blob/master/NEWS.md), [DQAstats](https://github.com/miracum/dqa-dqastats/blob/master/NEWS.md), [DQAgui](https://github.com/miracum/dqa-dqagui/blob/master/NEWS.md), [miRacumDQA](https://github.com/miracum/dqa-miracumdqa/blob/master/NEWS.md), [kdry](https://github.com/kapsner/kdry/blob/main/NEWS.md), [mlexperiments](https://github.com/kapsner/mlexperiments/blob/main/NEWS.md), [mllrnrs](https://github.com/kapsner/mllrnrs/blob/main/NEWS.md)
+**(If you are using `autonewsmd` and you like to have your repository listed here, please add the link pointing to the changelog file to this [`README.md`](./README.md) and create a pull request.)**
 
 ## Related R Packages
 
