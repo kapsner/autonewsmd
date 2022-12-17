@@ -1,5 +1,19 @@
 # autonewsmd NEWS
 
+## Unreleased (2022-11-13)
+
+#### Other changes
+
+-   added mlsurvlrnrs pkg to used by section
+    ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
+-   merge pull request \#5 from kapsner/development
+    ([3b07f0a](https://github.com/kapsner/autonewsmd/tree/3b07f0afe953e11194b81fcf0ada306dee191bb3))
+-   updated news.md
+    ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
+
+Full set of changes:
+[`v0.0.4...3d5a012`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...3d5a012)
+
 ## v0.0.4 (2022-10-31)
 
 #### New features
