@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![](https://www.r-pkg.org/badges/version/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
-[![CRAN checks](https://cranchecks.info/badges/summary/autonewsmd)](https://cran.r-project.org/web/checks/check_results_autonewsmd.html)
+[![CRAN checks](https://badges.cranchecks.info/summary/autonewsmd.svg)](https://cran.r-project.org/web/checks/check_results_autonewsmd.html)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
 [![](http://cranlogs.r-pkg.org/badges/last-month/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
 [![Dependencies](https://tinyverse.netlify.com/badge/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
