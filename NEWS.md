@@ -1,6 +1,7 @@
 # autonewsmd NEWS
 
-## Unreleased (2022-11-13)
+
+## Unreleased (2023-01-20)
 
 #### Other changes
 
@@ -12,7 +13,7 @@
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...3d5a012`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...3d5a012)
+[`v0.0.4...88ba8e1`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...88ba8e1)
 
 ## v0.0.4 (2022-10-31)
 
