@@ -16,13 +16,14 @@
 
 init_autonewsmd <- function(self, private, repo_name, repo_path, repo_remotes) {
   stopifnot(
-    is.character(repo_name),
-    ifelse(
+    "`repo_name` must be a character string" = is.character(repo_name),
+    "`repo_remotes` must be a character string" = ifelse(
       test = is.null(repo_remotes),
       yes = TRUE,
       no = is.character(repo_remotes)
     ),
-    ifelse(
+    "`repo_path` must be a character string and \
+    the directory must exist on the file system" = ifelse(
       test = is.null(repo_path),
       yes = TRUE,
       no = is.character(repo_path) && dir.exists(repo_path)

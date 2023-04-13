@@ -17,9 +17,9 @@
 write_autonewsmd <- function(self, private, force, con) {
 
   stopifnot(
-    !is.null(self$repo_list),
-    !is.null(private$repo_url),
-    is.logical(force)
+    "`repo_list` is missing or `NULL`" = !is.null(self$repo_list),
+    "`repo_url` is missing or `NULL`" = !is.null(private$repo_url),
+    "`force` must be a boolean value" = is.logical(force)
   )
 
   if (isFALSE(force)) {

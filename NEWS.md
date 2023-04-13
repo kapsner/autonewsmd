@@ -1,10 +1,24 @@
 # autonewsmd NEWS
 
-
-## Unreleased (2023-01-20)
+## Unreleased (2023-01-21)
 
 #### Other changes
 
+-   added pkg to readme
+    ([c84e5ec](https://github.com/kapsner/autonewsmd/tree/c84e5ecec14804c9775ef512822dd4aeb6b977d6))
+
+## v0.0.5 (2023-01-21)
+
+#### Other changes
+
+-   merged yihuis patch
+    ([851b893](https://github.com/kapsner/autonewsmd/tree/851b893cd39bd7fee18249bcf5a1a7b4e5f4e803))
+-   updated readme, news.md
+    ([647a8c7](https://github.com/kapsner/autonewsmd/tree/647a8c7e26e7d95f57a204683c7767541980e380))
+-   fixed cran-checks badge
+    ([f24b8e5](https://github.com/kapsner/autonewsmd/tree/f24b8e55fa4e376b7d2bca039b66d831310d51d4))
+-   added authors-block to readme
+    ([a9211ea](https://github.com/kapsner/autonewsmd/tree/a9211ea4994e5d53aff9989f43afbb33a094a094))
 -   added mlsurvlrnrs pkg to used by section
     ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
 -   merge pull request \#5 from kapsner/development
@@ -13,7 +27,7 @@
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...88ba8e1`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...88ba8e1)
+[`v0.0.4...v0.0.5`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...v0.0.5)
 
 ## v0.0.4 (2022-10-31)
 

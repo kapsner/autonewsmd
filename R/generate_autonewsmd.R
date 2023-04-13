@@ -112,7 +112,7 @@ generate_autonewsmd <- function(self, private) {
       if (i == 1) {
         set_tag <- "Unreleased"
       }
-      stopifnot(!is.null(set_tag))
+      stopifnot("`set_tag` must not be empty at this point" = !is.null(set_tag))
       repo_df[i, ("tag") := set_tag]
     }
   }
