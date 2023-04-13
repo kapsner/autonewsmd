@@ -1,11 +1,16 @@
 # autonewsmd NEWS
 
-## Unreleased (2023-01-21)
+## v0.0.6 (2023-04-13)
 
 #### Other changes
 
+-   more informative error messages
+    ([04f115a](https://github.com/kapsner/autonewsmd/tree/04f115aad0cb53c517e0e04cce08b8e53f07b939))
 -   added pkg to readme
     ([c84e5ec](https://github.com/kapsner/autonewsmd/tree/c84e5ecec14804c9775ef512822dd4aeb6b977d6))
+
+Full set of changes:
+[`v0.0.5...v0.0.6`](https://github.com/kapsner/autonewsmd/compare/v0.0.5...v0.0.6)
 
 ## v0.0.5 (2023-01-21)
 
