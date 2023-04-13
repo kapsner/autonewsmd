@@ -1,5 +1,17 @@
 # autonewsmd NEWS
 
+## Unreleased (2023-04-13)
+
+#### Other changes
+
+-   updated description
+    ([77dc1d9](https://github.com/kapsner/autonewsmd/tree/77dc1d9d64b821d036e50f0c565c9c9abf91bf4e))
+-   updated news.md to v0.0.6
+    ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
+
+Full set of changes:
+[`v0.0.6...77dc1d9`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...77dc1d9)
+
 ## v0.0.6 (2023-04-13)
 
 #### Other changes
