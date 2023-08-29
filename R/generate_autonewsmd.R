@@ -186,8 +186,15 @@ generate_autonewsmd <- function(self, private) {
       )
       append_list[["full_changes"]] <- paste0(
         "Full set of changes:\ [`", set_changes,
-        "`](", file.path(repo_url, "-", "compare", set_changes), ")"
+        "`](", file.path(repo_url, "compare", set_changes, fsep = "/"), ")"
       )
+      if (grepl(pattern = "^(http(s)?://)?.*gitlab.*\\/", x = repo_url)) {
+        append_list[["full_changes"]] <- gsub(
+          pattern = "\\/compare\\/",
+          replacement = "/-/compare/",
+          x = append_list[["full_changes"]]
+        )
+      }
     }
     repo_list[[tn]] <- append_list
   }
