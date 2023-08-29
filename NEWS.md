@@ -1,9 +1,12 @@
+
 # autonewsmd NEWS
 
 ## Unreleased (2023-08-29)
 
 #### Bug fixes
 
+-   addresses issue with gitlab comparison found by @joundso
+    ([c5ae722](https://github.com/kapsner/autonewsmd/tree/c5ae7220459f6ca73daeafa72fa27e341125189c))
 -   “compare”-url generation now has a slash in it
     ([b7afdc1](https://github.com/kapsner/autonewsmd/tree/b7afdc1f640754e0f24e2f5372818758da3956a8))
 
@@ -15,7 +18,7 @@
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
 
 Full set of changes:
-[`v0.0.6...b7afdc1`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...b7afdc1)
+[`v0.0.6...c5ae722`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...c5ae722)
 
 ## v0.0.6 (2023-04-13)
 
@@ -43,7 +46,7 @@ Full set of changes:
     ([a9211ea](https://github.com/kapsner/autonewsmd/tree/a9211ea4994e5d53aff9989f43afbb33a094a094))
 -   added mlsurvlrnrs pkg to used by section
     ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
--   merge pull request \#5 from kapsner/development
+-   merge pull request #5 from kapsner/development
     ([3b07f0a](https://github.com/kapsner/autonewsmd/tree/3b07f0afe953e11194b81fcf0ada306dee191bb3))
 -   updated news.md
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
@@ -66,7 +69,7 @@ Full set of changes:
 
 -   fixed issue when only one commit available
     ([1c323d1](https://github.com/kapsner/autonewsmd/tree/1c323d115274b09fe9e05695ed95a89084a3cd6a))
--   fixed reference to type\_mappings in private
+-   fixed reference to type_mappings in private
     ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
 
 #### Refactorings

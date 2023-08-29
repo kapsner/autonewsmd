@@ -19,6 +19,8 @@ write_autonewsmd <- function(self, private, force, con) {
   stopifnot(
     "`repo_list` is missing or `NULL`" = !is.null(self$repo_list),
     "`repo_url` is missing or `NULL`" = !is.null(private$repo_url),
+    "`repo_name` is missing or `NULL`" = !is.null(self$repo_name),
+    "`file_name` is missing or `NULL`" = !is.null(self$file_name),
     "`force` must be a boolean value" = is.logical(force)
   )
 
@@ -70,9 +72,6 @@ write_autonewsmd <- function(self, private, force, con) {
   }
 
   # nolint start
-  repo_list <- self$repo_list
-  repo_url <- private$repo_url
-  repo_name <- self$repo_name
   repo_path <- private$repo_path
   file_name <- self$file_name
   file_ending <- self$file_ending
@@ -83,26 +82,39 @@ write_autonewsmd <- function(self, private, force, con) {
   template_file <- tempfile(
     pattern = "autonewsmd-",
     tmpdir = tempdir(),
-    fileext = "-news-md-template.Rmd"
+    fileext = "-news-md-template.qmd"
   )
 
   # copy template file from package directory to tempdir()
   file.copy(
     from = system.file(
-      "templates/news-md-template.Rmd",
+      file.path("templates", "news-md-template.qmd"),
       package = "autonewsmd"
     ),
     to = template_file,
     overwrite = TRUE
   )
 
-  rmarkdown::render(
+  outfile <- file.path(
+    repo_path,
+    I(paste0(file_name, file_ending))
+  )
+
+  prepare_rda(self, private)
+  quarto::quarto_render(
     input = template_file,
-    output_file = I(paste0(file_name, file_ending)),
-    output_dir = repo_path
-    #%, intermediates_dir = tempdir()
-    #%, knit_root_dir = tempdir()
+    output_format = "md"
+  )
+
+  md_temp_file <- gsub("\\.qmd$", ".md", template_file)
+
+  file.copy(
+    from = md_temp_file,
+    to = outfile,
+    overwrite = TRUE
   )
 
   invisible(file.remove(template_file))
+  invisible(file.remove(md_temp_file))
+  invisible(file.remove(file.path(tempdir(), "autonewsmd.Rda")))
 }

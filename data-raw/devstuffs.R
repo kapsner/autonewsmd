@@ -54,7 +54,7 @@ usethis::use_package("R", min_version = "3.4", type = "Depends")
 usethis::use_package("data.table", type = "Imports")
 usethis::use_package("magrittr", type = "Imports")
 usethis::use_package("git2r", type = "Imports")
-usethis::use_package("rmarkdown", type = "Imports")
+usethis::use_package("quarto", type = "Imports")
 usethis::use_package("R6", type = "Imports")
 usethis::use_package("utils", type = "Imports")
 
