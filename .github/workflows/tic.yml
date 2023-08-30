@@ -47,11 +47,15 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
         if: runner.os == 'macOS'
-
+        
+      - uses: r-lib/actions/setup-tinytex@v2
+        if: matrix.config.latex == 'true'
+        env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
+          
       - uses: quarto-dev/quarto-actions/setup@v2
         if: matrix.config.latex == 'true'
-        with:
-          tinytex: true
 
       - uses: actions/setup-java@v1
         if: matrix.config.java == 'true'
