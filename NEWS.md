@@ -5,6 +5,8 @@
 
 #### Bug fixes
 
+-   moving from rmarkdown to quarto for rendering news.md
+    ([80a8fca](https://github.com/kapsner/autonewsmd/tree/80a8fcaa4b2397e9db29b70cabd4902a3ac47604))
 -   addresses issue with gitlab comparison found by @joundso
     ([c5ae722](https://github.com/kapsner/autonewsmd/tree/c5ae7220459f6ca73daeafa72fa27e341125189c))
 -   “compare”-url generation now has a slash in it
@@ -18,7 +20,7 @@
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
 
 Full set of changes:
-[`v0.0.6...c5ae722`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...c5ae722)
+[`v0.0.6...80a8fca`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...80a8fca)
 
 ## v0.0.6 (2023-04-13)
 
