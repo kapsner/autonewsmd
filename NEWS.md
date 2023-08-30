@@ -1,10 +1,12 @@
 
 # autonewsmd NEWS
 
-## Unreleased (2023-08-29)
+## Unreleased (2023-08-30)
 
 #### Bug fixes
 
+-   fixed issue with presence of multiple associated remote repos
+    ([341960a](https://github.com/kapsner/autonewsmd/tree/341960a531c04d2058112f3be77213d76b917915))
 -   moving from rmarkdown to quarto for rendering news.md
     ([80a8fca](https://github.com/kapsner/autonewsmd/tree/80a8fcaa4b2397e9db29b70cabd4902a3ac47604))
 -   addresses issue with gitlab comparison found by @joundso
@@ -12,15 +14,24 @@
 -   “compare”-url generation now has a slash in it
     ([b7afdc1](https://github.com/kapsner/autonewsmd/tree/b7afdc1f640754e0f24e2f5372818758da3956a8))
 
+#### CI
+
+-   re-introduced pandoc installation for macos runners
+    ([54b022b](https://github.com/kapsner/autonewsmd/tree/54b022be62defe118f307fcbeead00efdf1485f2))
+-   added quarto installation to gha
+    ([11adf80](https://github.com/kapsner/autonewsmd/tree/11adf8057a1ebae1a1965bf50da9a563432267f2))
+
 #### Other changes
 
+-   added message to indicate location of copied output file
+    ([1ce501a](https://github.com/kapsner/autonewsmd/tree/1ce501a70ee2527690fbde553f4c467779ecbc96))
 -   updated description
     ([77dc1d9](https://github.com/kapsner/autonewsmd/tree/77dc1d9d64b821d036e50f0c565c9c9abf91bf4e))
 -   updated news.md to v0.0.6
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
 
 Full set of changes:
-[`v0.0.6...80a8fca`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...80a8fca)
+[`v0.0.6...54b022b`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...54b022b)
 
 ## v0.0.6 (2023-04-13)
 
