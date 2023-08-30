@@ -45,6 +45,9 @@ jobs:
           r-version: ${{ matrix.config.r }}
           Ncpus: 4
 
+      - uses: r-lib/actions/setup-pandoc@v2
+        if: runner.os == 'macOS'
+
       - uses: quarto-dev/quarto-actions/setup@v2
         if: matrix.config.latex == 'true'
         with:
