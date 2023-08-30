@@ -45,14 +45,13 @@ jobs:
           r-version: ${{ matrix.config.r }}
           Ncpus: 4
 
-      - uses: r-lib/actions/setup-tinytex@v2
-        if: matrix.config.latex == 'true'
-        env:
-          # install full prebuilt version
-          TINYTEX_INSTALLER: TinyTeX
-
       - uses: r-lib/actions/setup-pandoc@v2
+        if: runner.os == 'macOS'
+
+      - uses: quarto-dev/quarto-actions/setup@v2
         if: matrix.config.latex == 'true'
+        with:
+          tinytex: true
 
       - uses: actions/setup-java@v1
         if: matrix.config.java == 'true'
@@ -78,7 +77,7 @@ jobs:
       - name: "[Stage] Configure R Java"
         if: runner.os != 'Windows' && matrix.config.java == 'true'
         run: "echo export PATH=$PATH > reconf.sh; echo export JAVA_HOME=$JAVA_HOME >> reconf.sh; echo R CMD javareconf >> reconf.sh; sudo bash reconf.sh"
-        
+
       - name: "[Stage] Install pak"
         run: Rscript -e "install.packages('pak', repos = 'https://r-lib.github.io/p/pak/stable')"
 

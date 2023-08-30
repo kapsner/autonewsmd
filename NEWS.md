@@ -1,16 +1,19 @@
+
 # autonewsmd NEWS
 
 ## Unreleased (2023-04-13)
 
 #### Other changes
 
+-   updated latest dev version
+    ([903fff6](https://github.com/kapsner/autonewsmd/tree/903fff66efc2114f822971022343f3b96389ff9c))
 -   updated description
     ([77dc1d9](https://github.com/kapsner/autonewsmd/tree/77dc1d9d64b821d036e50f0c565c9c9abf91bf4e))
 -   updated news.md to v0.0.6
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
 
 Full set of changes:
-[`v0.0.6...77dc1d9`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...77dc1d9)
+[`v0.0.6...903fff6`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...903fff6)
 
 ## v0.0.6 (2023-04-13)
 
@@ -38,7 +41,7 @@ Full set of changes:
     ([a9211ea](https://github.com/kapsner/autonewsmd/tree/a9211ea4994e5d53aff9989f43afbb33a094a094))
 -   added mlsurvlrnrs pkg to used by section
     ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
--   merge pull request \#5 from kapsner/development
+-   merge pull request #5 from kapsner/development
     ([3b07f0a](https://github.com/kapsner/autonewsmd/tree/3b07f0afe953e11194b81fcf0ada306dee191bb3))
 -   updated news.md
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
@@ -61,7 +64,7 @@ Full set of changes:
 
 -   fixed issue when only one commit available
     ([1c323d1](https://github.com/kapsner/autonewsmd/tree/1c323d115274b09fe9e05695ed95a89084a3cd6a))
--   fixed reference to type\_mappings in private
+-   fixed reference to type_mappings in private
     ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
 
 #### Refactorings

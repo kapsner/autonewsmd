@@ -152,4 +152,3 @@ newsmd
 - add options to format the changelog
 - add more changelog style templates
 - add support for [Commit message with scope](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
-- switch rendering of md to quarto -> challenges: currently, quarto does not allow to pass objects from the environment to the document that is rendered; hence, one needs to find a solution how to pass the `repo_list`, which is created in the `get_git_log` function (as well as some other objects) on to the *.qmd file for properly rendering the document.

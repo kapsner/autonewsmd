@@ -32,7 +32,8 @@ mdtemplate_tags_decreasing <- function(repo_list, change_hierarchy, repo_url) {
           cat(paste0(
             "- ", chg_commits[chg_row, get("clean_summary")], " ([",
             chg_commits[chg_row, get("sha_seven")], "](",
-            file.path(repo_url, "tree", chg_commits[chg_row, get("sha")]), "))"
+            file.path(repo_url, "tree", chg_commits[chg_row, get("sha")],
+                      fsep = "/"), "))"
           ), "\n")
         }
       }

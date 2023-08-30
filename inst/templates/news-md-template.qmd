@@ -18,6 +18,7 @@ change_hierarchy <- c(
   "Style",
   "Other changes"
 )
+load("./autonewsmd.Rda")
 ```
 
 # `r repo_name` `r file_name`

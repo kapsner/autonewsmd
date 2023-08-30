@@ -51,18 +51,10 @@ jobs:
           r-version: ${{ matrix.config.r }}
           Ncpus: 4
 
-      # LaTeX. Installation time:
-      # Linux: ~ 1 min
-      # macOS: ~ 1 min 30s
-      # Windows: never finishes
-      - uses: r-lib/actions/setup-tinytex@v2
+      - uses: quarto-dev/quarto-actions/setup@v2
         if: matrix.config.latex == 'true'
-        env:
-          # install full prebuilt version
-          TINYTEX_INSTALLER: TinyTeX
-
-      - uses: r-lib/actions/setup-pandoc@v2
-        if: matrix.config.latex == 'true'
+        with:
+          tinytex: true
 
       - uses: actions/setup-java@v1
         if: matrix.config.java == 'true'

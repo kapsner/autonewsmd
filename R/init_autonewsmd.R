@@ -42,9 +42,33 @@ init_autonewsmd <- function(self, private, repo_name, repo_path, repo_remotes) {
     repo = private$repo,
     remote = repo_remotes
   )
-  private$repo_url <- gsub(
+  repo_url <- gsub(
     pattern = "\\.git$",
     replacement = "",
     x = repo_url
   )
+  ru_len <- length(repo_url)
+  if (ru_len > 1) {
+    msg <- paste0(
+      "More than one associated remote repositories detected.\n",
+      "Which one should be used for generating the NEWS.md file?\n\n"
+    )
+    msg_repos <- paste0(seq_along(repo_url), ") ", repo_url, "\n")
+    msg <- paste0(
+      msg, paste0(msg_repos, collapse = "")
+    )
+    message(msg)
+    valid_choice <- FALSE
+    while (!valid_choice) {
+      choice <- readline(prompt = "Please enter the desired repository: ")
+      if (!is.integer(as.integer(choice)) || (as.integer(choice) < 1) ||
+          (as.integer(choice) > ru_len)) {
+        message(paste0("\nPlease enter an integer between 1 and ", ru_len))
+      } else {
+        repo_url <- repo_url[as.integer(choice)]
+        valid_choice <- TRUE
+      }
+    }
+  }
+  private$repo_url <- repo_url
 }
