@@ -113,6 +113,9 @@ write_autonewsmd <- function(self, private, force, con) {
     to = outfile,
     overwrite = TRUE
   )
+  message(paste0(
+    "Copied generated '", I(paste0(file_name, file_ending)),
+    "' to '", outfile, "'."))
 
   invisible(file.remove(template_file))
   invisible(file.remove(md_temp_file))
