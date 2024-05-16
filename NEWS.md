@@ -1,36 +1,45 @@
-
 # autonewsmd NEWS
 
-## Unreleased (2023-04-13)
+## Unreleased (2023-08-30)
+
+#### Bug fixes
+
+-   merged fix regarding gitlab-comparison urls into development
+    ([9033c3c](https://github.com/kapsner/autonewsmd/tree/9033c3cdad0f306411459422bae8fdd59a0d060f))
+-   fixed issue with presence of multiple associated remote repos
+    ([341960a](https://github.com/kapsner/autonewsmd/tree/341960a531c04d2058112f3be77213d76b917915))
+-   moving from rmarkdown to quarto for rendering news.md
+    ([80a8fca](https://github.com/kapsner/autonewsmd/tree/80a8fcaa4b2397e9db29b70cabd4902a3ac47604))
+-   addresses issue with gitlab comparison found by @joundso
+    ([c5ae722](https://github.com/kapsner/autonewsmd/tree/c5ae7220459f6ca73daeafa72fa27e341125189c))
+-   “compare”-url generation now has a slash in it
+    ([b7afdc1](https://github.com/kapsner/autonewsmd/tree/b7afdc1f640754e0f24e2f5372818758da3956a8))
+
+#### CI
+
+-   another try to fix tinytex-installation on macos
+    ([c10cb1b](https://github.com/kapsner/autonewsmd/tree/c10cb1b0fa4fa46c5a07d7cd7fd5a69b74b3d4cd))
+-   re-introduced pandoc installation for macos runners
+    ([54b022b](https://github.com/kapsner/autonewsmd/tree/54b022be62defe118f307fcbeead00efdf1485f2))
+-   added quarto installation to gha
+    ([11adf80](https://github.com/kapsner/autonewsmd/tree/11adf8057a1ebae1a1965bf50da9a563432267f2))
 
 #### Other changes
 
+-   updated news.md
+    ([d30b576](https://github.com/kapsner/autonewsmd/tree/d30b5763581648c3da3b7710322c97b09b2d2392))
+-   added message to indicate location of copied output file
+    ([1ce501a](https://github.com/kapsner/autonewsmd/tree/1ce501a70ee2527690fbde553f4c467779ecbc96))
 -   updated latest dev version
     ([903fff6](https://github.com/kapsner/autonewsmd/tree/903fff66efc2114f822971022343f3b96389ff9c))
 -   updated description
     ([77dc1d9](https://github.com/kapsner/autonewsmd/tree/77dc1d9d64b821d036e50f0c565c9c9abf91bf4e))
 -   updated news.md to v0.0.6
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
-
-Full set of changes:
-[`v0.0.6...903fff6`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...903fff6)
-
-## v0.0.6 (2023-04-13)
-
-#### Other changes
-
 -   more informative error messages
     ([04f115a](https://github.com/kapsner/autonewsmd/tree/04f115aad0cb53c517e0e04cce08b8e53f07b939))
 -   added pkg to readme
     ([c84e5ec](https://github.com/kapsner/autonewsmd/tree/c84e5ecec14804c9775ef512822dd4aeb6b977d6))
-
-Full set of changes:
-[`v0.0.5...v0.0.6`](https://github.com/kapsner/autonewsmd/compare/v0.0.5...v0.0.6)
-
-## v0.0.5 (2023-01-21)
-
-#### Other changes
-
 -   merged yihuis patch
     ([851b893](https://github.com/kapsner/autonewsmd/tree/851b893cd39bd7fee18249bcf5a1a7b4e5f4e803))
 -   updated readme, news.md
@@ -41,13 +50,13 @@ Full set of changes:
     ([a9211ea](https://github.com/kapsner/autonewsmd/tree/a9211ea4994e5d53aff9989f43afbb33a094a094))
 -   added mlsurvlrnrs pkg to used by section
     ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
--   merge pull request #5 from kapsner/development
+-   merge pull request \#5 from kapsner/development
     ([3b07f0a](https://github.com/kapsner/autonewsmd/tree/3b07f0afe953e11194b81fcf0ada306dee191bb3))
 -   updated news.md
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...v0.0.5`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...v0.0.5)
+[`v0.0.4...c10cb1b`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...c10cb1b)
 
 ## v0.0.4 (2022-10-31)
 
@@ -64,7 +73,7 @@ Full set of changes:
 
 -   fixed issue when only one commit available
     ([1c323d1](https://github.com/kapsner/autonewsmd/tree/1c323d115274b09fe9e05695ed95a89084a3cd6a))
--   fixed reference to type_mappings in private
+-   fixed reference to type\_mappings in private
     ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
 
 #### Refactorings
