@@ -78,8 +78,8 @@ autonewsmd <- R6::R6Class(
 
     #' @field tag_pattern A character. A regular expression pattern to identify
     #'   release tags in the repository.
-    #'   Defaults to `"^v(\\d+\\.){2}\\d+(\\.\\d+)?$"` to identify patterns of
-    #'   the from `v0.0.1.9001`.
+    #'   Defaults to \code{"^v(\\d+\\.){2}\\d+(\\.\\d+)?$"} to identify patterns
+    #'   like `v0.0.1.9001`.
     tag_pattern = "^v(\\d+\\.){2}\\d+(\\.\\d+)?$",
 
     #' @field repo_list The list contains the commit messages prepared for
