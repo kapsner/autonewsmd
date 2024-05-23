@@ -1,5 +1,6 @@
 ---
 format: gfm
+default-image-extension: ""
 editor_options: 
   chunk_output_type: console
 ---
