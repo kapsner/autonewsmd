@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2023-08-30)
+## Unreleased (2024-05-16)
 
 #### Bug fixes
 
@@ -17,6 +17,8 @@
 
 #### CI
 
+-   updated gha
+    ([982578f](https://github.com/kapsner/autonewsmd/tree/982578fc26a97a0d862cc282243b83dbd20f4c8f))
 -   another try to fix tinytex-installation on macos
     ([c10cb1b](https://github.com/kapsner/autonewsmd/tree/c10cb1b0fa4fa46c5a07d7cd7fd5a69b74b3d4cd))
 -   re-introduced pandoc installation for macos runners
@@ -26,6 +28,8 @@
 
 #### Other changes
 
+-   changed docs to avoid tools::checkRd complaining about regex pattern
+    ([c4b6773](https://github.com/kapsner/autonewsmd/tree/c4b67737987bb24d2068417b4c8f467c4aaa65e2))
 -   updated news.md
     ([d30b576](https://github.com/kapsner/autonewsmd/tree/d30b5763581648c3da3b7710322c97b09b2d2392))
 -   added message to indicate location of copied output file
@@ -56,7 +60,7 @@
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...c10cb1b`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...c10cb1b)
+[`v0.0.4...c4b6773`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...c4b6773)
 
 ## v0.0.4 (2022-10-31)
 

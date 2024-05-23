@@ -87,16 +87,7 @@ usethis::use_git_ignore("Meta")
 
 usethis::use_tidy_description()
 
-
-badger::badge_lifecycle()
-badger::badge_cran_release("autonewsmd")
-badger::badge_cran_checks("autonewsmd")
-badger::badge_cran_download("autonewsmd", "grand-total", "blue")
-badger::badge_cran_download("autonewsmd", "last-month", "blue")
-badger::badge_dependencies("autonewsmd")
-badger::badge_github_actions(action = "R CMD Check via {tic}")
-badger::badge_github_actions(action = "lint")
-badger::badge_github_actions(action = "test-coverage")
+quarto::quarto_render(input = "README.qmd")
 
 an <- autonewsmd::autonewsmd$new(repo_name = packagename)
 an$generate()
