@@ -20,7 +20,7 @@ cat_var <- paste(
   gsub("summary", "worst", badger::badge_cran_checks(pkg = pkg)),
   badger::badge_cran_download(pkg = pkg, type = "grand-total", color = "blue"),
   badger::badge_cran_download(pkg = pkg, type = "last-month", color = "blue"),
-  badger::badge_dependencies(pkg = pkg),
+  gsub("netlify\\.com", "netlify.app", badger::badge_dependencies(pkg = pkg)),
   badger::badge_github_actions(action = utils::URLencode("R CMD Check via {tic}")),
   badger::badge_github_actions(action = "lint"),
   badger::badge_github_actions(action = "test-coverage"),

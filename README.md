@@ -10,7 +10,7 @@
 checks](https://badges.cranchecks.info/worst/autonewsmd.svg)](https://cran.r-project.org/web/checks/check_results_autonewsmd.html)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
 [![](http://cranlogs.r-pkg.org/badges/last-month/autonewsmd?color=blue)](https://cran.r-project.org/package=autonewsmd)
-[![Dependencies](https://tinyverse.netlify.com/badge/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
+[![Dependencies](https://tinyverse.netlify.app/badge/autonewsmd)](https://cran.r-project.org/package=autonewsmd)
 [![R build
 status](https://github.com/kapsner/autonewsmd/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
 [![R build
