@@ -25,5 +25,5 @@ Suggests:
     testthat (>= 3.0.1)
 VignetteBuilder: 
     knitr
-Date/Publication: 2024-05-23 09:56:31.999342 UTC
+Date/Publication: 2024-05-23 09:59:19.713771 UTC
 Encoding: UTF-8

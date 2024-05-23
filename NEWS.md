@@ -1,6 +1,6 @@
 # autonewsmd NEWS
 
-## Unreleased (2024-05-16)
+## Unreleased (2024-05-23)
 
 #### Bug fixes
 
@@ -28,6 +28,8 @@
 
 #### Other changes
 
+-   now with automatically generated readme
+    ([8abcbe9](https://github.com/kapsner/autonewsmd/tree/8abcbe93dfc967d4b98613aed19eb6c55075b9a2))
 -   changed docs to avoid tools::checkRd complaining about regex pattern
     ([c4b6773](https://github.com/kapsner/autonewsmd/tree/c4b67737987bb24d2068417b4c8f467c4aaa65e2))
 -   updated news.md
@@ -60,7 +62,7 @@
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...c4b6773`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...c4b6773)
+[`v0.0.4...8abcbe9`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...8abcbe9)
 
 ## v0.0.4 (2022-10-31)
 

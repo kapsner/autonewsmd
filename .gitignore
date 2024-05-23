@@ -52,3 +52,4 @@
 docs
 Meta
 inst/doc
+!README.qmd

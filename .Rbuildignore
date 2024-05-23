@@ -14,3 +14,4 @@
 ^CRAN-SUBMISSION$
 ^autonewsmd-manual\.tex$
 ^\.ccache$
+^README\.qmd$
