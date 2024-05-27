@@ -28,6 +28,12 @@
 
 #### Other changes
 
+-   fixed deps url
+    ([ab71f0d](https://github.com/kapsner/autonewsmd/tree/ab71f0df685c3e99ab8cf610580c5a1e1ad277ae))
+-   removed default image extension causing errors with badge urls
+    ([0bdeb96](https://github.com/kapsner/autonewsmd/tree/0bdeb96587b772422713655910cb8398898a834c))
+-   added readme.qmd and urls displaying asis
+    ([6db029b](https://github.com/kapsner/autonewsmd/tree/6db029b994c7a625656617d1c923d9a6d9c34feb))
 -   now with automatically generated readme
     ([8abcbe9](https://github.com/kapsner/autonewsmd/tree/8abcbe93dfc967d4b98613aed19eb6c55075b9a2))
 -   changed docs to avoid tools::checkRd complaining about regex pattern
@@ -62,7 +68,7 @@
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...8abcbe9`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...8abcbe9)
+[`v0.0.4...ab71f0d`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...ab71f0d)
 
 ## v0.0.4 (2022-10-31)
 
