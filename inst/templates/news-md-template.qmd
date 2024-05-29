@@ -1,10 +1,13 @@
 ---
 output: md_document
+default-image-extension: ''
 editor_options: 
   chunk_output_type: console
 ---
 
-```{r include=FALSE}
+```{r}
+#| include: false
+
 change_hierarchy <- c(
   "Breaking changes",
   "New features",
@@ -23,8 +26,10 @@ load("./autonewsmd.Rda")
 
 # `r repo_name` `r file_name`
 
-```{r results='asis', echo=FALSE}
+```{r}
 #| results: asis
+#| echo: false
+
 mdtemplate_tags_decreasing(
   repo_list = repo_list,
   change_hierarchy = change_hierarchy,

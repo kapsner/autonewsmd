@@ -2,6 +2,13 @@
 
 # autonewsmd NEWS
 
+## Unreleased (2024-05-29)
+
+#### Other changes
+
+-   moved to quarto as vignette engine
+    ([610e7b5](https://github.com/kapsner/autonewsmd/tree/610e7b5f14b3d69063b4b204ae3e23842be766d2))
+
 ## v0.0.8 (2024-05-29)
 
 #### Bug fixes
