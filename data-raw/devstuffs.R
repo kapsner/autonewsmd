@@ -19,7 +19,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.7")
+my_desc$set_version("0.0.8")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package
@@ -37,6 +37,11 @@ my_desc$set("BugReports",
 
 # Vignette Builder
 my_desc$set("VignetteBuilder" = "knitr")
+# Quarto
+my_desc$set("SystemRequirements" = paste0(
+  "Quarto command line tools ",
+  "(https://github.com/quarto-dev/quarto-cli).")
+)
 
 # License
 my_desc$set("License", "GPL-3")
@@ -47,7 +52,7 @@ my_desc$write(file = "DESCRIPTION")
 #usethis::use_gpl3_license()
 
 # Depends
-usethis::use_package("R", min_version = "3.4", type = "Depends")
+usethis::use_package("R", min_version = "3.6", type = "Depends")
 
 # Imports
 # https://cran.r-project.org/web/packages/data.table/vignettes/datatable-importing.html

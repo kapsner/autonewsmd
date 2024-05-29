@@ -1,6 +1,8 @@
+
+
 # autonewsmd NEWS
 
-## Unreleased (2024-05-23)
+## v0.0.7 (2024-05-27)
 
 #### Bug fixes
 
@@ -28,6 +30,8 @@
 
 #### Other changes
 
+-   version bump to 0.0.7
+    ([2154de3](https://github.com/kapsner/autonewsmd/tree/2154de39f66d104933befaf8f5f086dd71f641d5))
 -   fixed deps url
     ([ab71f0d](https://github.com/kapsner/autonewsmd/tree/ab71f0df685c3e99ab8cf610580c5a1e1ad277ae))
 -   removed default image extension causing errors with badge urls
@@ -62,13 +66,13 @@
     ([a9211ea](https://github.com/kapsner/autonewsmd/tree/a9211ea4994e5d53aff9989f43afbb33a094a094))
 -   added mlsurvlrnrs pkg to used by section
     ([3d5a012](https://github.com/kapsner/autonewsmd/tree/3d5a012643fd6bedb54e23ffd870d6447cadbb63))
--   merge pull request \#5 from kapsner/development
+-   merge pull request #5 from kapsner/development
     ([3b07f0a](https://github.com/kapsner/autonewsmd/tree/3b07f0afe953e11194b81fcf0ada306dee191bb3))
 -   updated news.md
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...ab71f0d`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...ab71f0d)
+[`v0.0.4...v0.0.7`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...v0.0.7)
 
 ## v0.0.4 (2022-10-31)
 
@@ -85,7 +89,7 @@ Full set of changes:
 
 -   fixed issue when only one commit available
     ([1c323d1](https://github.com/kapsner/autonewsmd/tree/1c323d115274b09fe9e05695ed95a89084a3cd6a))
--   fixed reference to type\_mappings in private
+-   fixed reference to type_mappings in private
     ([65ece46](https://github.com/kapsner/autonewsmd/tree/65ece468574594c8377e2db2d621a490af6979cd))
 
 #### Refactorings
