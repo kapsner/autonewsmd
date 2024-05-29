@@ -19,7 +19,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.8")
+my_desc$set_version("0.0.8.9001")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package
@@ -36,12 +36,18 @@ my_desc$set("BugReports",
             "https://github.com/kapsner/autonewsmd/issues")
 
 # Vignette Builder
-my_desc$set("VignetteBuilder" = "knitr")
+my_desc$set("VignetteBuilder" = "quarto")
 # Quarto
 my_desc$set("SystemRequirements" = paste0(
   "Quarto command line tools ",
   "(https://github.com/quarto-dev/quarto-cli).")
 )
+
+# Testthat stuff
+my_desc$set("Config/testthat/parallel" = "false")
+my_desc$set("Config/testthat/edition" = "3")
+# Roxygen
+my_desc$set("Roxygen" = "list(markdown = TRUE)")
 
 # License
 my_desc$set("License", "GPL-3")
@@ -66,7 +72,6 @@ usethis::use_package("utils", type = "Imports")
 # Suggests
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")
 usethis::use_package("lintr", type = "Suggests")
-usethis::use_package("knitr", type = "Suggests")
 
 
 # dev packages
@@ -91,6 +96,7 @@ usethis::use_git_ignore("!README.md")
 usethis::use_git_ignore("!README.qmd")
 usethis::use_git_ignore("docs")
 usethis::use_git_ignore("Meta")
+usethis::use_git_ignore("!vignettes/*.qmd")
 
 usethis::use_tidy_description()
 

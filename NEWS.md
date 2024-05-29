@@ -2,6 +2,13 @@
 
 # autonewsmd NEWS
 
+## v0.0.8 (2024-05-29)
+
+#### Bug fixes
+
+-   hotfix to address quarto cran issue on macos
+    ([959f6da](https://github.com/kapsner/autonewsmd/tree/959f6da372a94c95fc44edd045d6c75d22fd962f))
+
 ## v0.0.7 (2024-05-27)
 
 #### Bug fixes

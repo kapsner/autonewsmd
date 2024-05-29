@@ -4,14 +4,14 @@
 \alias{autonewsmd}
 \title{R6 Class to construct the changelog file}
 \description{
-The `autonewsmd` class is used to construct a new changelog file, set all
-  required metadata and to generate the file and save it to the root-
-  directory of the respective repository.
+The \code{autonewsmd} class is used to construct a new changelog file, set all
+required metadata and to generate the file and save it to the root-
+directory of the respective repository.
 }
 \details{
 The changelog file has a title that typically includes the name of the
-  repository, which needs at least to be provided when constructing a new
-  changelog file.
+repository, which needs at least to be provided when constructing a new
+changelog file.
 }
 \examples{
 # (Example is based on the public examples from the `git2r` R package)
@@ -195,17 +195,17 @@ inserted into the title of the changelog file.}
 \item{\code{tag_pattern}}{A character. A regular expression pattern to identify
 release tags in the repository.
 Defaults to \code{"^v(\\d+\\.){2}\\d+(\\.\\d+)?$"} to identify patterns
-like `v0.0.1.9001`.}
+like \code{v0.0.1.9001}.}
 
 \item{\code{repo_list}}{The list contains the commit messages prepared for
 the changelog file.}
 
 \item{\code{file_name}}{A character. The name of the file, which is
-inserted into the title of the changelog file. Defaults to `"NEWS"`
-(typically one of `"NEWS"` or `"CHANGELOG"`).}
+inserted into the title of the changelog file. Defaults to \code{"NEWS"}
+(typically one of \code{"NEWS"} or \code{"CHANGELOG"}).}
 
 \item{\code{file_ending}}{A character. The file ending of the file the
-changelog should be written to. Defaults to `".md"`.}
+changelog should be written to. Defaults to \code{".md"}.}
 }
 \if{html}{\out{</div>}}
 }
@@ -222,7 +222,7 @@ changelog should be written to. Defaults to `".md"`.}
 \if{html}{\out{<a id="method-autonewsmd-new"></a>}}
 \if{latex}{\out{\hypertarget{method-autonewsmd-new}{}}}
 \subsection{Method \code{new()}}{
-Create a new `autonewsmd` object.
+Create a new \code{autonewsmd} object.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{autonewsmd$new(repo_name, repo_path = NULL, repo_remotes = NULL)}\if{html}{\out{</div>}}
 }
@@ -234,17 +234,17 @@ Create a new `autonewsmd` object.
 inserted into the title of the changelog file.}
 
 \item{\code{repo_path}}{A character. The path of the repository to create a new
-changelog for. If `NULL` (the default), it will point automatically to
-to `"."`.}
+changelog for. If \code{NULL} (the default), it will point automatically to
+to \code{"."}.}
 
 \item{\code{repo_remotes}}{A character. The name of the tracked repository that
 should be used to get the repository's URL (e.g. when executing
-`git remote -v` in the shell). Defaults to `NULL`.}
+\verb{git remote -v} in the shell). Defaults to \code{NULL}.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A new `autonewsmd` object.
+A new \code{autonewsmd} object.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
@@ -295,20 +295,20 @@ an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 \if{latex}{\out{\hypertarget{method-autonewsmd-generate}{}}}
 \subsection{Method \code{generate()}}{
 Generate the list with the formatted commit messages that is used to
-  render the changelog.
+render the changelog.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{autonewsmd$generate()}\if{html}{\out{</div>}}
 }
 
 \subsection{Details}{
 The function generates the formatted list with the commit
-  messages. If tags are available, each commit message is assigned to a
-  specific tag. These assignments are used to structure the changelog
-  document.
+messages. If tags are available, each commit message is assigned to a
+specific tag. These assignments are used to structure the changelog
+document.
 }
 
 \subsection{Returns}{
-Populates the public field `repo_list`.
+Populates the public field \code{repo_list}.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
@@ -369,8 +369,8 @@ Writes the changelog to the file system.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{force}}{A boolean. If `FALSE` (the default) a dialog is prompted to
-ask the user if the file should be (over-) written. If `TRUE`, the
+\item{\code{force}}{A boolean. If \code{FALSE} (the default) a dialog is prompted to
+ask the user if the file should be (over-) written. If \code{TRUE}, the
 dialog is not prompted and the changelog file is created directly.}
 
 \item{\code{con}}{A connection with the answer to the interactive question, if
@@ -381,13 +381,13 @@ is intended mainly for being used in the unit tests.}
 }
 \subsection{Details}{
 This function writes the changelog to the file system using the
-  `file_name` and `file_ending` fields to compose the file name.
-  CAUTION: existing files will be overwritten without any warning.
+\code{file_name} and \code{file_ending} fields to compose the file name.
+CAUTION: existing files will be overwritten without any warning.
 }
 
 \subsection{Returns}{
 The function has no return value - it creates the new changelog
-  file.
+file.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
