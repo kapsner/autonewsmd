@@ -24,6 +24,17 @@ write_autonewsmd <- function(self, private, force, con) {
     "`force` must be a boolean value" = is.logical(force)
   )
 
+  # check for presence of quarto
+  if (is.null(quarto::quarto_path())) {
+    stop(
+      paste0(
+        "Quarto command-line tools path not found! ",
+        "Please make sure you have installed and added Quarto to your PATH ",
+        "or set the QUARTO_PATH environment variable."
+      )
+    )
+  }
+
   if (isFALSE(force)) {
     full_path <- file.path(
       private$repo_path,

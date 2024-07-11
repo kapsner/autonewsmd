@@ -6,7 +6,6 @@ vignette: >
   %\VignetteEngine{quarto::html}
 editor_options: 
   chunk_output_type: console
-
 execute:
   eval: false
   collapse: true

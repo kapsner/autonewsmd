@@ -6,8 +6,14 @@
 
 #### Other changes
 
+-   added default-image-extension to templateto prevent occuring of
+    strange errors
+    ([d9fc76a](https://github.com/kapsner/autonewsmd/tree/d9fc76a1b4f548f615fd468af37d55f5196cc6b2))
 -   moved to quarto as vignette engine
     ([610e7b5](https://github.com/kapsner/autonewsmd/tree/610e7b5f14b3d69063b4b204ae3e23842be766d2))
+
+Full set of changes:
+[`v0.0.8...d9fc76a`](https://github.com/kapsner/autonewsmd/compare/v0.0.8...d9fc76a)
 
 ## v0.0.8 (2024-05-29)
 
