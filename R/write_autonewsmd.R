@@ -25,7 +25,7 @@ write_autonewsmd <- function(self, private, force, con) {
   )
 
   # check for presence of quarto
-  if (is.null(quarto::quarto_path())) {
+  if (is.null(quarto::quarto_path()) || quarto::quarto_path() == "") {
     stop(
       paste0(
         "Quarto command-line tools path not found! ",
