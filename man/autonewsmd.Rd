@@ -18,39 +18,42 @@ changelog file.
 ## Initialize a repository
 path <- file.path(tempdir(), "autonewsmd")
 dir.create(path)
+
+if (requireNamespace("git2r", quietly = TRUE)) {
 repo <- git2r::init(path)
 
-## Config user
-git2r::config(repo, user.name = "Alice", user.email = "alice@example.org")
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+  ## Config user
+  git2r::config(repo, user.name = "Alice", user.email = "alice@example.org")
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
-## generate the news and write them to the repo
-an$generate()
+  ## generate the news and write them to the repo
+  an$generate()
 
-if (interactive()) {
-  an$write()
+  if (interactive()) {
+    an$write()
+  }
 }
 
 
@@ -62,37 +65,40 @@ if (interactive()) {
 ## Initialize a repository
 path <- file.path(tempdir(), "autonewsmd")
 dir.create(path)
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+}
 
 
 ## ------------------------------------------------
@@ -103,40 +109,43 @@ an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 ## Initialize a repository
 path <- file.path(tempdir(), "autonewsmd")
 dir.create(path)
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
-## generate the news and write them to the repo
-an$generate()
+  ## generate the news and write them to the repo
+  an$generate()
+}
 
 
 ## ------------------------------------------------
@@ -146,43 +155,46 @@ an$generate()
 # (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
 path <- tempdir()
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
-## generate the news and write them to the repo
-an$generate()
+  ## generate the news and write them to the repo
+  an$generate()
 
-if (interactive()) {
-  an$write()
+  if (interactive()) {
+    an$write()
+  }
 }
 
 }
@@ -252,37 +264,40 @@ A new \code{autonewsmd} object.
 ## Initialize a repository
 path <- file.path(tempdir(), "autonewsmd")
 dir.create(path)
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+}
 
 }
 \if{html}{\out{</div>}}
@@ -316,40 +331,43 @@ Populates the public field \code{repo_list}.
 ## Initialize a repository
 path <- file.path(tempdir(), "autonewsmd")
 dir.create(path)
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
-## generate the news and write them to the repo
-an$generate()
+  ## generate the news and write them to the repo
+  an$generate()
+}
 
 }
 \if{html}{\out{</div>}}
@@ -394,43 +412,46 @@ file.
 \preformatted{# (Example is based on the public examples from the `git2r` R package)
 ## Initialize a repository
 path <- tempdir()
-repo <- git2r::init(path)
 
-## Config user
-git2r::config(
-  repo, user.name = "Alice", user.email = "alice@example.org"
-)
-git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
+if (requireNamespace("git2r", quietly = TRUE)) {
+  repo <- git2r::init(path)
+
+  ## Config user
+  git2r::config(
+    repo, user.name = "Alice", user.email = "alice@example.org"
+  )
+  git2r::remote_set_url(repo, "foobar", "https://example.org/git2r/foobar")
 
 
-## Write to a file and commit
-lines <- paste0(
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
-)
-writeLines(lines, file.path(path, "example.txt"))
+  ## Write to a file and commit
+  lines <- paste0(
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+  )
+  writeLines(lines, file.path(path, "example.txt"))
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "feat: new file")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "feat: new file")
 
-## Write again to a file and commit
-lines2 <- paste0(
-  "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
-  "nisi ut aliquip ex ea commodo consequat."
-)
-write(lines2, file.path(path, "example.txt"), append = TRUE)
+  ## Write again to a file and commit
+  lines2 <- paste0(
+    "eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ",
+    "nisi ut aliquip ex ea commodo consequat."
+  )
+  write(lines2, file.path(path, "example.txt"), append = TRUE)
 
-git2r::add(repo, "example.txt")
-git2r::commit(repo, "refactor: added second phrase")
+  git2r::add(repo, "example.txt")
+  git2r::commit(repo, "refactor: added second phrase")
 
-## now construct a new autonewsmd object
-an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
+  ## now construct a new autonewsmd object
+  an <- autonewsmd$new(repo_name = "TestRepo", repo_path = path)
 
-## generate the news and write them to the repo
-an$generate()
+  ## generate the news and write them to the repo
+  an$generate()
 
-if (interactive()) {
-  an$write()
+  if (interactive()) {
+    an$write()
+  }
 }
 
 }

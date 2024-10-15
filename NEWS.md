@@ -2,7 +2,12 @@
 
 # autonewsmd NEWS
 
-## Unreleased (2024-05-29)
+## Unreleased (2024-07-11)
+
+#### Bug fixes
+
+-   first try to fix issues with quarto vignette on macosx cran runners
+    ([3e3190a](https://github.com/kapsner/autonewsmd/tree/3e3190a8cf831ffcf8bbc95d11c77efad953553f))
 
 #### Other changes
 
@@ -13,7 +18,7 @@
     ([610e7b5](https://github.com/kapsner/autonewsmd/tree/610e7b5f14b3d69063b4b204ae3e23842be766d2))
 
 Full set of changes:
-[`v0.0.8...d9fc76a`](https://github.com/kapsner/autonewsmd/compare/v0.0.8...d9fc76a)
+[`v0.0.8...3e3190a`](https://github.com/kapsner/autonewsmd/compare/v0.0.8...3e3190a)
 
 ## v0.0.8 (2024-05-29)
 
@@ -72,10 +77,26 @@ Full set of changes:
     ([77dc1d9](https://github.com/kapsner/autonewsmd/tree/77dc1d9d64b821d036e50f0c565c9c9abf91bf4e))
 -   updated news.md to v0.0.6
     ([a5f4da2](https://github.com/kapsner/autonewsmd/tree/a5f4da2cc998e36ee5dfd4fa7635ec9d0364067e))
+
+Full set of changes:
+[`v0.0.6...v0.0.7`](https://github.com/kapsner/autonewsmd/compare/v0.0.6...v0.0.7)
+
+## v0.0.6 (2023-04-13)
+
+#### Other changes
+
 -   more informative error messages
     ([04f115a](https://github.com/kapsner/autonewsmd/tree/04f115aad0cb53c517e0e04cce08b8e53f07b939))
 -   added pkg to readme
     ([c84e5ec](https://github.com/kapsner/autonewsmd/tree/c84e5ecec14804c9775ef512822dd4aeb6b977d6))
+
+Full set of changes:
+[`v0.0.5...v0.0.6`](https://github.com/kapsner/autonewsmd/compare/v0.0.5...v0.0.6)
+
+## v0.0.5 (2023-01-21)
+
+#### Other changes
+
 -   merged yihuis patch
     ([851b893](https://github.com/kapsner/autonewsmd/tree/851b893cd39bd7fee18249bcf5a1a7b4e5f4e803))
 -   updated readme, news.md
@@ -92,7 +113,7 @@ Full set of changes:
     ([5decf24](https://github.com/kapsner/autonewsmd/tree/5decf248ec4b12bcdc54baeedf631075657fad5a))
 
 Full set of changes:
-[`v0.0.4...v0.0.7`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...v0.0.7)
+[`v0.0.4...v0.0.5`](https://github.com/kapsner/autonewsmd/compare/v0.0.4...v0.0.5)
 
 ## v0.0.4 (2022-10-31)
 

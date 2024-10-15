@@ -9,7 +9,6 @@
 ^NEWS\.md$
 ^README\.md$
 ^docs$
-^Meta$
 ^doc$
 ^CRAN-SUBMISSION$
 ^autonewsmd-manual\.tex$
