@@ -4,19 +4,33 @@ default_install_hook_types:
   - post-commit
 
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+    - id: check-added-large-files
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+      args: [ --markdown-linebreak-ext=md ]
+    - id: detect-private-key
+
+  - repo: https://github.com/uker-troi-lab/commit_hooks.git
+    rev: v0.0.1
+    hooks:
+    - id: check-commit-msg
+
   # local hooks
   - repo: local
     hooks:
-      - id: changelog-helper
-        name: changelog-helper
-        entry: Rscript inst/hooks/changelog_helper.R
-        language: r
-        always_run: true
-        stages: [commit-msg]
-      - id: recreate-changelog
-        name: recreate-changelog
-        entry: Rscript inst/hooks/recreate_changelog.R
-        language: r
-        always_run: true
-        stages: [post-commit]
-        args: [--repo_remotes=origin, --file_name=NEWS]
+    - id: changelog-helper
+      name: changelog-helper
+      entry: Rscript inst/hooks/changelog_helper.R
+      language: r
+      always_run: true
+      stages: [commit-msg]
+    - id: recreate-changelog
+      name: recreate-changelog
+      entry: Rscript inst/hooks/recreate_changelog.R
+      language: r
+      always_run: true
+      stages: [post-commit]
+      args: [--file_name=NEWS]

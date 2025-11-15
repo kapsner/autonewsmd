@@ -1,7 +1,7 @@
 
 "Recreate CHANGELOG.md during a precommit.
 Usage:
-  recreate_changelog.R [options] ... 
+  recreate_changelog.R [options] ...
 
 Options:
   --repo_remotes The remote repositorie's name (defaults to 'origin')
@@ -9,7 +9,7 @@ Options:
 
 " -> doc
 
-for (req_pkg in c("precommit", "docopt", "autonewsmd", "git2r")) {
+for (req_pkg in c("autonewsmd", "precommit", "docopt", "git2r")) {
   if (!(req_pkg %in% installed.packages()[, "Package"])) {
     install.packages(req_pkg)
   }
