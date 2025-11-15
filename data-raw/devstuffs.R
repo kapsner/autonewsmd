@@ -66,11 +66,11 @@ usethis::use_package("data.table", type = "Imports")
 usethis::use_package("quarto", type = "Imports")
 usethis::use_package("R6", type = "Imports")
 usethis::use_package("utils", type = "Imports")
+usethis::use_package("git2r", type = "Imports")
 
 # Suggests
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")
 usethis::use_package("lintr", type = "Suggests")
-usethis::use_package("git2r", type = "Suggests")
 usethis::use_package("precommit", type = "Suggests")
 
 

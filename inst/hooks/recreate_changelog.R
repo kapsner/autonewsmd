@@ -4,30 +4,41 @@ Usage:
   recreate_changelog.R [options] ... 
 
 Options:
+  --repo_remotes The remotes-repositorie's URL
   --file_name Set the `file_name` argument of `autonewsmd()` (defaults to 'NEWS')
 
 " -> doc
 
-if (!("precommit" %in% installed.packages()[, "Package"])) {
-  install.packages("precommit")
+for (req_pkg in c("precommit", "docopt", "autonewsmd", "git2r")) {
+  if (!(req_pkg %in% installed.packages()[, "Package"])) {
+    install.packages(req_pkg)
+  }
 }
 
 arguments <- precommit::precommit_docopt(doc)
 
-if (arguments$file_name) {
+if (length(arguments$file_name) > 0) {
   filename <- arguments$file_name
 } else {
   filename <- "NEWS"
+}
+
+if (length(arguments$repo_remotes) > 0) {
+  repo_remotes <- arguments$repo_remotes
+} else {
+  repo_remotes <- NULL
 }
 
 tempfile <- file.path(tempdir(), "../.commit_temp_helper")
 
 if (file.exists(tempfile)) {
   file.remove(tempfile)
-  an <- autonewsmd::autonewsmd$new(
-    repo_name = basename(getwd()),
-    file_name = filename
-  )
+  args <- list(repo_name = basename(getwd()))
+  if (!is.null(repo_remotes)) {
+    args$repo_remotes <- repo_remotes
+  }
+  an <- do.call(autonewsmd::autonewsmd$new, args)
+  an$file_name <- filename
   an$generate()
   an$write(force = TRUE)
 

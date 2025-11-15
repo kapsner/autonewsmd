@@ -19,4 +19,4 @@ repos:
         language: r
         always_run: true
         stages: [post-commit]
-        args: [--file_name=NEWS]
+        args: [--repo_remotes=origin, --file_name=NEWS]

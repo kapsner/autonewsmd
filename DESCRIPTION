@@ -14,11 +14,11 @@ Depends:
     R (>= 4.1.0)
 Imports: 
     data.table,
+    git2r,
     quarto,
     R6,
     utils
 Suggests: 
-    git2r,
     lintr,
     precommit,
     testthat (>= 3.0.1)
@@ -26,9 +26,8 @@ VignetteBuilder:
     quarto
 Config/testthat/edition: 3
 Config/testthat/parallel: false
-Date/Publication: 2025-11-15 14:03:03.831934 UTC
+Date/Publication: 2025-11-15 14:15:15.335188 UTC
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 SystemRequirements: Quarto command line tools
     (https://github.com/quarto-dev/quarto-cli).
-RoxygenNote: 7.3.3

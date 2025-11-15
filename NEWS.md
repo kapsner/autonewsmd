@@ -13,8 +13,6 @@
 
 #### Other changes
 
--   fixed error handling of corrupt quarto installation
-    ([93a828f](https://github.com/kapsner/autonewsmd/tree/93a828ffd22db1fbfb7d7e3cc443d352968165f6))
 
 Full set of changes:
 [`v0.0.9...000055c`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...000055c)
