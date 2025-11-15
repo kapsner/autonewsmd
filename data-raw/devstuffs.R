@@ -105,7 +105,10 @@ usethis::use_tidy_description()
 
 quarto::quarto_render(input = "README.qmd")
 
-an <- autonewsmd::autonewsmd$new(repo_name = packagename)
+an <- autonewsmd::autonewsmd$new(
+  repo_name = packagename,
+  repo_remotes = "origin"
+)
 an$generate()
 an$write(force = TRUE)
 

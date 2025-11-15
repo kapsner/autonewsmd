@@ -6,6 +6,8 @@
 
 #### New features
 
+-   added pre-commit hooks (should be working now)
+    ([069bc96](https://github.com/kapsner/autonewsmd/tree/069bc96beaf44cee8e7aa0653dc338e9d00fc03d))
 -   added pre-commit hook to create changelog
     ([000055c](https://github.com/kapsner/autonewsmd/tree/000055c456908e31e6e32e7dacbf0779cbd80d0c))
 -   added pre-commit hook to create changelog
@@ -13,9 +15,21 @@
 
 #### Other changes
 
+-   added another fallback
+    ([75f2dd4](https://github.com/kapsner/autonewsmd/tree/75f2dd450c7cf4298500d4bd7bb2ccba33f257b7))
+-   added precommit install fallback
+    ([134d7c3](https://github.com/kapsner/autonewsmd/tree/134d7c31e6fd1f962471c42d154947c44a615a81))
+-   updated news.md
+    ([53a9da5](https://github.com/kapsner/autonewsmd/tree/53a9da5256c6beb99cabec77230c9d45a7c37221))
+-   updated news.md
+    ([c7a4351](https://github.com/kapsner/autonewsmd/tree/c7a4351de62be88119e51f399590d53064e47691))
+-   fixed error handling of corrupt quarto installation
+    ([93a828f](https://github.com/kapsner/autonewsmd/tree/93a828ffd22db1fbfb7d7e3cc443d352968165f6))
+-   updated dev version
+    ([7a73a33](https://github.com/kapsner/autonewsmd/tree/7a73a33097426c89f12385c8f91f60402a08a3ce))
 
 Full set of changes:
-[`v0.0.9...000055c`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...000055c)
+[`v0.0.9...069bc96`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...069bc96)
 
 ## v0.0.9 (2024-10-15)
 
