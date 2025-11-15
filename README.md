@@ -17,8 +17,7 @@ status](https://github.com/kapsner/autonewsmd/workflows/R%20CMD%20Check%20via%20
 status](https://github.com/kapsner/autonewsmd/workflows/lint/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
 [![R build
 status](https://github.com/kapsner/autonewsmd/workflows/test-coverage/badge.svg)](https://github.com/kapsner/autonewsmd/actions)
-[![](https://codecov.io/gh/https://github.com/kapsner/autonewsmd/branch/main/graph/badge.svg)](https://codecov.io/gh/https://github.com/kapsner/autonewsmd)
-
+[![](https://codecov.io/gh/https://github.com/kapsner/autonewsmd/branch/main/graph/badge.svg)](https://app.codecov.io/gh/https://github.com/kapsner/autonewsmd)
 <!-- badges: end -->
 
 The purpose of the `autonewsmd` R package is to bring the power of

@@ -1,0 +1,22 @@
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+  - post-commit
+
+repos:
+  # local hooks
+  - repo: local
+    hooks:
+      - id: changelog-helper
+        name: changelog-helper
+        entry: Rscript inst/hooks/changelog_helper.R
+        language: r
+        always_run: true
+        stages: [commit-msg]
+      - id: recreate-changelog
+        name: recreate-changelog
+        entry: Rscript inst/hooks/recreate_changelog.R
+        language: r
+        always_run: true
+        stages: [post-commit]
+        args: [--file_name=NEWS]

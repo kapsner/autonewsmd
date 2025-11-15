@@ -14,3 +14,5 @@
 ^autonewsmd-manual\.tex$
 ^\.ccache$
 ^README\.qmd$
+^\.pre-commit-hooks\.yaml$
+^\.pre-commit-config\.yaml$

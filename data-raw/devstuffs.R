@@ -19,7 +19,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.9.9001")
+my_desc$set_version("0.0.9.9002")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package
@@ -72,6 +72,7 @@ usethis::use_package("utils", type = "Imports")
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")
 usethis::use_package("lintr", type = "Suggests")
 usethis::use_package("git2r", type = "Suggests")
+usethis::use_package("precommit", type = "Suggests")
 
 
 # dev packages
@@ -89,6 +90,8 @@ usethis::use_build_ignore("README.md")
 usethis::use_build_ignore("README.qmd")
 usethis::use_build_ignore("docs")
 usethis::use_build_ignore("autonewsmd-manual.tex")
+usethis::use_build_ignore(".pre-commit-hooks.yaml")
+usethis::use_build_ignore(".pre-commit-config.yaml")
 
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")

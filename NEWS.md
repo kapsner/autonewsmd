@@ -2,10 +2,26 @@
 
 # autonewsmd NEWS
 
-## Unreleased (2024-07-11)
+## Unreleased (2024-10-15)
+
+#### Other changes
+
+-   fixed error handling of corrupt quarto installation
+    ([93a828f](https://github.com/kapsner/autonewsmd/tree/93a828ffd22db1fbfb7d7e3cc443d352968165f6))
+-   updated dev version
+    ([7a73a33](https://github.com/kapsner/autonewsmd/tree/7a73a33097426c89f12385c8f91f60402a08a3ce))
+
+Full set of changes:
+[`v0.0.9...93a828f`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...93a828f)
+
+## v0.0.9 (2024-10-15)
 
 #### Bug fixes
 
+-   readded vignette
+    ([6174204](https://github.com/kapsner/autonewsmd/tree/6174204ebbf295170eab4352eb58026a83a4c54b))
+-   fixes impending cran-ban of git2r
+    ([c9b7046](https://github.com/kapsner/autonewsmd/tree/c9b7046a71cd18c3f753ce928e644536471e0aa3))
 -   first try to fix issues with quarto vignette on macosx cran runners
     ([3e3190a](https://github.com/kapsner/autonewsmd/tree/3e3190a8cf831ffcf8bbc95d11c77efad953553f))
 
@@ -18,7 +34,7 @@
     ([610e7b5](https://github.com/kapsner/autonewsmd/tree/610e7b5f14b3d69063b4b204ae3e23842be766d2))
 
 Full set of changes:
-[`v0.0.8...3e3190a`](https://github.com/kapsner/autonewsmd/compare/v0.0.8...3e3190a)
+[`v0.0.8...v0.0.9`](https://github.com/kapsner/autonewsmd/compare/v0.0.8...v0.0.9)
 
 ## v0.0.8 (2024-05-29)
 

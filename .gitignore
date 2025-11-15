@@ -23,6 +23,7 @@
 !/inst/
 /inst/*
 !/inst/templates/
+!/inst/hooks/
 !/man/
 !/R/
 !/vignettes/
@@ -33,6 +34,9 @@
 !/tests/testthat/test-*.R
 !/tests/testthat.R
 /tests/testthat/testdata/
+
+!.pre-commit-hooks.yaml
+!.pre-commit-config.yaml
 
 /.Rhistory
 /.Rproj*
