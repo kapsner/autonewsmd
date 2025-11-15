@@ -3,5 +3,4 @@
 export(autonewsmd)
 import(R6)
 import(data.table)
-importFrom(magrittr,"%>%")
 importFrom(utils,askYesNo)

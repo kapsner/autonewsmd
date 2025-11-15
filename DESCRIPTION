@@ -11,10 +11,9 @@ License: GPL-3
 URL: https://github.com/kapsner/autonewsmd
 BugReports: https://github.com/kapsner/autonewsmd/issues
 Depends: 
-    R (>= 3.6)
+    R (>= 4.1.0)
 Imports: 
     data.table,
-    magrittr,
     quarto,
     R6,
     utils
@@ -27,7 +26,7 @@ VignetteBuilder:
     quarto
 Config/testthat/edition: 3
 Config/testthat/parallel: false
-Date/Publication: 2025-11-15 13:41:54.559658 UTC
+Date/Publication: 2025-11-15 14:03:03.831934 UTC
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 SystemRequirements: Quarto command line tools

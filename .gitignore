@@ -58,3 +58,6 @@ Meta
 inst/doc
 !README.qmd
 !vignettes/*.qmd
+
+renv
+!renv.lock

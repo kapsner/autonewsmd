@@ -22,7 +22,7 @@ generate_autonewsmd <- function(self, private) {
   type_mappings <- private$type_mappings
 
   # load whole git-history into a data.table
-  repo_df <- git2r::as.data.frame(repo) %>%
+  repo_df <- git2r::as.data.frame(repo) |> 
     data.table::as.data.table()
 
   # generate 7-char sha

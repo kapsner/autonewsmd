@@ -58,12 +58,11 @@ my_desc$write(file = "DESCRIPTION")
 #usethis::use_gpl3_license()
 
 # Depends
-usethis::use_package("R", min_version = "3.6", type = "Depends")
+usethis::use_package("R", min_version = "4.1.0", type = "Depends")
 
 # Imports
 # https://cran.r-project.org/web/packages/data.table/vignettes/datatable-importing.html
 usethis::use_package("data.table", type = "Imports")
-usethis::use_package("magrittr", type = "Imports")
 usethis::use_package("quarto", type = "Imports")
 usethis::use_package("R6", type = "Imports")
 usethis::use_package("utils", type = "Imports")
@@ -92,6 +91,8 @@ usethis::use_build_ignore("docs")
 usethis::use_build_ignore("autonewsmd-manual.tex")
 usethis::use_build_ignore(".pre-commit-hooks.yaml")
 usethis::use_build_ignore(".pre-commit-config.yaml")
+usethis::use_build_ignore("renv")
+usethis::use_build_ignore("renv.lock")
 
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")
