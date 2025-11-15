@@ -8,6 +8,10 @@ Options:
 
 " -> doc
 
+if (!("precommit" %in% installed.packages()[, "Package"])) {
+  install.packages("precommit")
+}
+
 arguments <- precommit::precommit_docopt(doc)
 
 if (arguments$file_name) {
