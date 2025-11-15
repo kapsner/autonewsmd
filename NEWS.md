@@ -2,7 +2,14 @@
 
 # autonewsmd NEWS
 
-## Unreleased (2024-10-15)
+## Unreleased (2025-11-15)
+
+#### New features
+
+-   added pre-commit hook to create changelog
+    ([000055c](https://github.com/kapsner/autonewsmd/tree/000055c456908e31e6e32e7dacbf0779cbd80d0c))
+-   added pre-commit hook to create changelog
+    ([d88e99e](https://github.com/kapsner/autonewsmd/tree/d88e99e435e8651f75110bc7ec46c8d5075e9893))
 
 #### Other changes
 
@@ -12,7 +19,7 @@
     ([7a73a33](https://github.com/kapsner/autonewsmd/tree/7a73a33097426c89f12385c8f91f60402a08a3ce))
 
 Full set of changes:
-[`v0.0.9...93a828f`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...93a828f)
+[`v0.0.9...000055c`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...000055c)
 
 ## v0.0.9 (2024-10-15)
 
