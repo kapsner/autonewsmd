@@ -59,5 +59,8 @@ inst/doc
 !README.qmd
 !vignettes/*.qmd
 
-renv
+!renv/
+renv/*
+!renv/activate.R
+!renv/.gitignore
 !renv.lock

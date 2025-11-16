@@ -15,6 +15,8 @@
 
 #### CI
 
+-   added renv folder for remote-hook functionality
+    ([c2fcc8b](https://github.com/kapsner/autonewsmd/tree/c2fcc8bb2c800035ee42ebd3b87426abf1a3b238))
 -   added more commit hooks
     ([db568ef](https://github.com/kapsner/autonewsmd/tree/db568ef6f16def33d5e0d6c39fa3fcc7c988b0ea))
 -   added more commit hooks
@@ -23,7 +25,7 @@
 #### Other changes
 
 -   merged into development
-    ([a732838](https://github.com/kapsner/autonewsmd/tree/a732838e84a41c613d13aeabecaff00b5e23d765))
+    ([c355988](https://github.com/kapsner/autonewsmd/tree/c355988bbd97dc63da2c4151215e95b48f17de71))
 -   updated renv.lock
     ([992659f](https://github.com/kapsner/autonewsmd/tree/992659f0150f3cda14f29f1e9129f5f52280fba9))
 -   added another fallback
@@ -40,7 +42,7 @@
     ([7a73a33](https://github.com/kapsner/autonewsmd/tree/7a73a33097426c89f12385c8f91f60402a08a3ce))
 
 Full set of changes:
-[`v0.0.9...a732838`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...a732838)
+[`v0.0.9...c2fcc8b`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...c2fcc8b)
 
 ## v0.0.9 (2024-10-15)
 
