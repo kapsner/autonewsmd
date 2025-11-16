@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.5.1",
+    "Version": "4.5.2",
     "Repositories": [
       {
         "Name": "https://cloud.r-project.org",
@@ -518,6 +518,36 @@
       "NeedsCompilation": "yes",
       "Author": "Jim Hester [aut], Hadley Wickham [aut], Gábor Csárdi [aut, cre], libuv project contributors [cph] (libuv library), Joyent, Inc. and other Node contributors [cph] (libuv library), Posit Software, PBC [cph, fnd]",
       "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
+      "Repository": "CRAN"
+    },
+    "git2r": {
+      "Package": "git2r",
+      "Version": "0.36.2",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Provides Access to Git Repositories",
+      "Authors@R": "c(person(\"Stefan\", \"Widgren\", role = c(\"aut\", \"cre\"), email = \"stefan.widgren@gmail.com\", comment = c(ORCID = \"0000-0001-5745-2284\")), person(\"Gabor\", \"Csardi\", role = \"ctb\"), person(\"Gregory\", \"Jefferis\", role = \"ctb\"), person(\"Jennifer\", \"Bryan\", role = \"ctb\"), person(\"Jeroen\", \"Ooms\", role = \"ctb\"), person(\"Jim\", \"Hester\", role = \"ctb\"), person(\"John\", \"Blischak\", role = \"ctb\"), person(\"Karthik\", \"Ram\", role = \"ctb\"), person(\"Peter\", \"Carbonetto\", role = \"ctb\"), person(\"Scott\", \"Chamberlain\", role = \"ctb\"), person(\"Thomas\", \"Rosendal\", role = \"ctb\"))",
+      "Description": "Interface to the 'libgit2' library, which is a pure C implementation of the 'Git' core methods. Provides access to 'Git' repositories to extract data and running some basic 'Git' commands.",
+      "License": "GPL-2",
+      "URL": "https://docs.ropensci.org/git2r/, https://github.com/ropensci/git2r",
+      "BugReports": "https://github.com/ropensci/git2r/issues",
+      "Imports": [
+        "graphics",
+        "utils"
+      ],
+      "Depends": [
+        "R (>= 4.0)"
+      ],
+      "Suggests": [
+        "getPass"
+      ],
+      "NeedsCompilation": "yes",
+      "SystemRequirements": "libgit2 (>= 1.0) and its dependencies libssh2 and openssl header and libraries.",
+      "Collate": "'blame.R' 'blob.R' 'branch.R' 'bundle_r_package.R' 'checkout.R' 'commit.R' 'config.R' 'contributions.R' 'credential.R' 'diff.R' 'fetch.R' 'git2r.R' 'index.R' 'libgit2.R' 'merge.R' 'note.R' 'odb.R' 'plot.R' 'pull.R' 'punch_card.R' 'push.R' 'reference.R' 'reflog.R' 'refspec.R' 'remote.R' 'repository.R' 'reset.R' 'revparse.R' 'sha.R' 'signature.R' 'stash.R' 'status.R' 'tag.R' 'time.R' 'tree.R' 'when.R'",
+      "Encoding": "UTF-8",
+      "RoxygenNote": "7.3.2",
+      "Author": "Stefan Widgren [aut, cre] (<https://orcid.org/0000-0001-5745-2284>), Gabor Csardi [ctb], Gregory Jefferis [ctb], Jennifer Bryan [ctb], Jeroen Ooms [ctb], Jim Hester [ctb], John Blischak [ctb], Karthik Ram [ctb], Peter Carbonetto [ctb], Scott Chamberlain [ctb], Thomas Rosendal [ctb]",
+      "Maintainer": "Stefan Widgren <stefan.widgren@gmail.com>",
       "Repository": "CRAN"
     },
     "glue": {

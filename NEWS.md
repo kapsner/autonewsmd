@@ -16,10 +16,12 @@
 #### CI
 
 -   added more commit hooks
-    ([09efc7f](https://github.com/kapsner/autonewsmd/tree/09efc7f74680a2538594150ad00d9c7e6b77bbf1))
+    ([db568ef](https://github.com/kapsner/autonewsmd/tree/db568ef6f16def33d5e0d6c39fa3fcc7c988b0ea))
 
 #### Other changes
 
+-   updated renv.lock
+    ([90dc43d](https://github.com/kapsner/autonewsmd/tree/90dc43ddbc1378a7ee2b11db135bf2c165310ba2))
 -   added another fallback
     ([75f2dd4](https://github.com/kapsner/autonewsmd/tree/75f2dd450c7cf4298500d4bd7bb2ccba33f257b7))
 -   added precommit install fallback
@@ -34,7 +36,7 @@
     ([7a73a33](https://github.com/kapsner/autonewsmd/tree/7a73a33097426c89f12385c8f91f60402a08a3ce))
 
 Full set of changes:
-[`v0.0.9...09efc7f`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...09efc7f)
+[`v0.0.9...90dc43d`](https://github.com/kapsner/autonewsmd/compare/v0.0.9...90dc43d)
 
 ## v0.0.9 (2024-10-15)
 
