@@ -14,7 +14,7 @@ repos:
     - id: detect-private-key
 
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.3.9017
+    rev: v0.4.3.9020
     hooks:
     - id: no-browser-statement
 
