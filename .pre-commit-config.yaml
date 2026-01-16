@@ -13,6 +13,11 @@ repos:
       args: [ --markdown-linebreak-ext=md ]
     - id: detect-private-key
 
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.4.3.9017
+    hooks:
+    - id: no-browser-statement
+
   - repo: https://github.com/uker-troi-lab/commit_hooks.git
     rev: v0.0.1
     hooks:

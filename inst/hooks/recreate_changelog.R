@@ -1,4 +1,3 @@
-
 "Recreate CHANGELOG.md during a precommit.
 Usage:
   recreate_changelog.R [options] ...
@@ -9,8 +8,8 @@ Options:
 
 " -> doc
 
-for (req_pkg in c("autonewsmd", "precommit", "docopt", "git2r")) {
-  if (!(req_pkg %in% installed.packages()[, "Package"])) {
+for (req_pkg in c("precommit", "docopt", "git2r")) {
+  if (!(requireNamespace(req_pkg))) {
     install.packages(req_pkg)
   }
 }
@@ -37,17 +36,22 @@ if (file.exists(tempfile)) {
   if (!is.null(repo_remotes)) {
     args$repo_remotes <- repo_remotes
   }
-  tryCatch(expr = {
-    an <- do.call(autonewsmd::autonewsmd$new, args)
-    an$file_name <- filename
-    an$generate()
-    an$write(force = TRUE)
+  tryCatch(
+    expr = {
+      an <- do.call(autonewsmd::autonewsmd$new, args)
+      an$file_name <- filename
+      an$generate()
+      an$write(force = TRUE)
 
-    system(paste0(
-      "git add ", filename, ".md && ",
-      "git commit --amend --no-edit --no-verify"
-    ))
-  }, error = function(e) {
-    warning(e)
-  })
+      system(paste0(
+        "git add ",
+        filename,
+        ".md && ",
+        "git commit --amend --no-edit --no-verify"
+      ))
+    },
+    error = function(e) {
+      warning(e)
+    }
+  )
 }

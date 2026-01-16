@@ -15,32 +15,36 @@ my_desc$set_authors(c(
     email = "lorenz.kapsner@gmail.com",
     role = c('cre', 'aut', 'cph'),
     comment = c(ORCID = "0000-0003-1866-860X")
-  )))
+  )
+))
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.9.9002")
+my_desc$set_version("0.0.10")
 # The title of your package
 my_desc$set(Title = "Auto-Generate Changelog using Conventional Commits")
 # The description of your package
-my_desc$set(Description = paste0(
-  "Automatically generate a changelog file (NEWS.md / CHANGELOG.md) ",
-  "from the git history using conventional commit messages ",
-  "(<https://www.conventionalcommits.org/en/v1.0.0/>)."
-))
+my_desc$set(
+  Description = paste0(
+    "Automatically generate a changelog file (NEWS.md / CHANGELOG.md) ",
+    "from the git history using conventional commit messages ",
+    "(<https://www.conventionalcommits.org/en/v1.0.0/>)."
+  )
+)
 # The description of your package
 my_desc$set("Date/Publication" = paste(as.character(Sys.time()), "UTC"))
 # The urls
 my_desc$set("URL", "https://github.com/kapsner/autonewsmd")
-my_desc$set("BugReports",
-            "https://github.com/kapsner/autonewsmd/issues")
+my_desc$set("BugReports", "https://github.com/kapsner/autonewsmd/issues")
 
 # Vignette Builder
 my_desc$set("VignetteBuilder" = "quarto")
 # Quarto
-my_desc$set("SystemRequirements" = paste0(
-  "Quarto command line tools ",
-  "(https://github.com/quarto-dev/quarto-cli).")
+my_desc$set(
+  "SystemRequirements" = paste0(
+    "Quarto command line tools ",
+    "(https://github.com/quarto-dev/quarto-cli)."
+  )
 )
 
 # Testthat stuff
@@ -111,5 +115,12 @@ an <- autonewsmd::autonewsmd$new(
 )
 an$generate()
 an$write(force = TRUE)
+
+
+# renv stuff
+renv::activate()
+renv::status()
+renv::update()
+renv::snapshot()
 
 # nolint end
