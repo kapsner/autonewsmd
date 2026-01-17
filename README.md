@@ -161,22 +161,39 @@ list.files(path)
 ``` r
 newsmd <- readLines(file.path(path, "NEWS.md"))
 newsmd
-#>  [1] "# TestRepo NEWS"                                                                                
-#>  [2] ""                                                                                               
-#>  [3] "## v0.0.1 (2022-08-27)"                                                                         
-#>  [4] ""                                                                                               
-#>  [5] "#### New features"                                                                              
-#>  [6] ""                                                                                               
-#>  [7] "-   new file"                                                                                   
+#>  [1] "# TestRepo NEWS"  
+#>  [2] ""  
+#>  [3] "## v0.0.1 (2022-08-27)"  
+#>  [4] ""  
+#>  [5] "#### New features"  
+#>  [6] ""  
+#>  [7] "-   new file"  
 #>  [8] "    ([22b8453](https://example.org/git2r/foobar/tree/22b845346a0f3686d79eb86445af6be71dc86da6))"
-#>  [9] ""                                                                                               
-#> [10] "#### Refactorings"                                                                              
-#> [11] ""                                                                                               
-#> [12] "-   added second phrase"                                                                        
+#>  [9] ""  
+#> [10] "#### Refactorings"  
+#> [11] ""  
+#> [12] "-   added second phrase"  
 #> [13] "    ([ec510eb](https://example.org/git2r/foobar/tree/ec510ebb465d25ab7ad27e8b637cf4113b55cbdf))"
-#> [14] ""                                                                                               
-#> [15] "Full set of changes:"                                                                           
+#> [14] ""  
+#> [15] "Full set of changes:"  
 #> [16] "[`22b8453...v0.0.1`](https://example.org/git2r/foobar/compare/22b8453...v0.0.1)"
+```
+
+## Pre-Commit Hook
+
+The functionality of `autonewsmd` is also available as a pre-commit hook
+(for more background information on pre-commit please visit
+<https://pre-commit.com/>). To use `autonewsmd` as pre-commit hook, just
+add the following snippet to your project’s
+[.pre-commit-config.yaml](.pre-commit-config.yaml).
+
+``` yaml
+- repo: https://github.com/kapsner/autonewsmd
+  rev: v0.1.0
+  hooks:
+  - id: changelog-helper
+  - id: recreate-changelog
+    args: [ --file_name=NEWS ]  # 'NEWS' is the default value. Can be changed to e.g. 'CHANGELOG'
 ```
 
 ## Used By
@@ -207,6 +224,8 @@ listed here, please add the link pointing to the changelog file to this
 - [`fledge`](https://github.com/cynkra/fledge): to streamline the
   process of updating changelogs (NEWS.md) and versioning R packages
   developed in git repositories (also supporting conventional commits)
+- [`git-sv`](https://github.com/thegeeklab/git-sv): is a semantic
+  versioning tool for git based on conventional commits written in Go
 
 ## TODOs:
 
