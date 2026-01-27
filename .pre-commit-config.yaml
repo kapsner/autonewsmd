@@ -33,3 +33,4 @@ repos:
       always_run: true
       stages: [post-commit]
       args: [--file_name=NEWS]
+      verbose: true
