@@ -8,7 +8,7 @@ Options:
 
 " -> doc
 
-for (req_pkg in c("precommit", "docopt", "git2r")) {
+for (req_pkg in c("autonewsmd", "precommit", "docopt", "git2r")) {
   if (!(requireNamespace(req_pkg))) {
     install.packages(req_pkg)
   }
