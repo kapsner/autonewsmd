@@ -4,6 +4,13 @@
 
 ## Unreleased (2026-01-27)
 
+#### Bug fixes
+
+- handling of skip env-var to respect existing parameters
+  ([a7c57c7](https://github.com/kapsner/autonewsmd/tree/a7c57c77be8c57934ecba451b844d844d4ad2c95))
+
+## v0.1.0.9002 (2026-01-27)
+
 #### New features
 
 - switch to pak for commit-hook deps installing
@@ -24,7 +31,7 @@
 #### Other changes
 
 - removed debugging verbose-statement from local hook
-  ([8066ae7](https://github.com/kapsner/autonewsmd/tree/8066ae7dbb9dfa2d0ef7a9949f63b4929c0af3fb))
+  ([fa8d78e](https://github.com/kapsner/autonewsmd/tree/fa8d78e7e0b1ac6f9506af2d71ebaf28e30331be))
 - added verbose statement to local hook-config
   ([5908ba2](https://github.com/kapsner/autonewsmd/tree/5908ba2ffd5b06025cd2958bc919ee28b47b941c))
 - updated pre-commit-config
@@ -33,7 +40,7 @@
   ([bf9786d](https://github.com/kapsner/autonewsmd/tree/bf9786d5e19605a8d5f296851d2d6636b97a9792))
 
 Full set of changes:
-[`v0.1.0...8066ae7`](https://github.com/kapsner/autonewsmd/compare/v0.1.0...8066ae7)
+[`v0.1.0...v0.1.0.9002`](https://github.com/kapsner/autonewsmd/compare/v0.1.0...v0.1.0.9002)
 
 ## v0.1.0 (2026-01-16)
 

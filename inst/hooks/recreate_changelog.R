@@ -43,11 +43,26 @@ tryCatch(
     an$generate()
     an$write(force = TRUE)
 
+    # append skip string
+    append_string <- "recreate-changelog"
+    cur_val <- Sys.getenv("SKIP")
+    if (cur_val != "") {
+      skip_string <- paste0(
+        cur_val,
+        ",",
+        append_string
+      )
+    } else {
+      skip_string <- append_string
+    }
+
     system(paste0(
       "git add ",
       filename,
       ".md && ",
-      "SKIP=recreate-changelog git commit --amend --no-edit --no-verify"
+      "SKIP=",
+      skip_string,
+      " git commit --amend --no-edit --no-verify"
     ))
   },
   error = function(e) {
