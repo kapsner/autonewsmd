@@ -6,8 +6,15 @@
 
 #### New features
 
+- switch to pak for commit-hook deps installing
+  ([d78ec76](https://github.com/kapsner/autonewsmd/tree/d78ec764ad84e528f499a6f8b6328f89fb9c8161))
 - removed changelog-helper and added SKIP env-var instead
-  ([27400af](https://github.com/kapsner/autonewsmd/tree/27400afec6d077acae2c31281169e319644f725a))
+  ([ed3b3b3](https://github.com/kapsner/autonewsmd/tree/ed3b3b3b3d04fdac1b268b6febacbffe19e6cc95))
+
+#### Bug fixes
+
+- added autonewsmd fallback for installation
+  ([d94ea54](https://github.com/kapsner/autonewsmd/tree/d94ea542e1bf3bd0f3e18ac409bc33009733b3da))
 
 #### Docs
 
@@ -16,13 +23,15 @@
 
 #### Other changes
 
+- added verbose statement to local hook-config
+  ([5908ba2](https://github.com/kapsner/autonewsmd/tree/5908ba2ffd5b06025cd2958bc919ee28b47b941c))
 - updated pre-commit-config
   ([21cf0ca](https://github.com/kapsner/autonewsmd/tree/21cf0cadc87c40f8561c3b7ef36eb49a45487b22))
 - updated dev-version
   ([bf9786d](https://github.com/kapsner/autonewsmd/tree/bf9786d5e19605a8d5f296851d2d6636b97a9792))
 
 Full set of changes:
-[`v0.1.0...27400af`](https://github.com/kapsner/autonewsmd/compare/v0.1.0...27400af)
+[`v0.1.0...d78ec76`](https://github.com/kapsner/autonewsmd/compare/v0.1.0...d78ec76)
 
 ## v0.1.0 (2026-01-16)
 

@@ -8,9 +8,13 @@ Options:
 
 " -> doc
 
+if (!(requireNamespace("pak"))) {
+  install.packages("pak")
+}
+
 for (req_pkg in c("autonewsmd", "precommit", "docopt", "git2r")) {
   if (!(requireNamespace(req_pkg))) {
-    install.packages(req_pkg)
+    pak::pkg_install(req_pkg)
   }
 }
 
