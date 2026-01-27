@@ -1,11 +1,3 @@
-# prepare post-commit stage
-- id: changelog-helper
-  name: changelog-helper
-  entry: Rscript inst/hooks/changelog_helper.R
-  language: r
-  always_run: true
-  stages: [commit-msg]
-
 # update changelog after commit with --no-verify to avoid endless loop
 - id: recreate-changelog
   name: recreate-changelog

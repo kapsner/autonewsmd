@@ -1,6 +1,6 @@
 Package: autonewsmd
 Title: Auto-Generate Changelog using Conventional Commits
-Version: 0.1.0.9001
+Version: 0.1.0.9002
 Authors@R:
     person("Lorenz A.", "Kapsner", , "lorenz.kapsner@gmail.com", role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0003-1866-860X"))
@@ -20,13 +20,12 @@ Imports:
     utils
 Suggests:
     lintr,
-    precommit,
     testthat (>= 3.0.1)
 VignetteBuilder:
     quarto
 Config/testthat/edition: 3
 Config/testthat/parallel: false
-Date/Publication: 2026-01-16 20:17:37.90386 UTC
+Date/Publication: 2026-01-27 15:49:28.895789 UTC
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 SystemRequirements: Quarto command line tools

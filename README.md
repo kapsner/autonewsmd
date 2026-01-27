@@ -161,21 +161,21 @@ list.files(path)
 ``` r
 newsmd <- readLines(file.path(path, "NEWS.md"))
 newsmd
-#>  [1] "# TestRepo NEWS"  
-#>  [2] ""  
-#>  [3] "## v0.0.1 (2022-08-27)"  
-#>  [4] ""  
-#>  [5] "#### New features"  
-#>  [6] ""  
-#>  [7] "-   new file"  
+#>  [1] "# TestRepo NEWS"
+#>  [2] ""
+#>  [3] "## v0.0.1 (2022-08-27)"
+#>  [4] ""
+#>  [5] "#### New features"
+#>  [6] ""
+#>  [7] "-   new file"
 #>  [8] "    ([22b8453](https://example.org/git2r/foobar/tree/22b845346a0f3686d79eb86445af6be71dc86da6))"
-#>  [9] ""  
-#> [10] "#### Refactorings"  
-#> [11] ""  
-#> [12] "-   added second phrase"  
+#>  [9] ""
+#> [10] "#### Refactorings"
+#> [11] ""
+#> [12] "-   added second phrase"
 #> [13] "    ([ec510eb](https://example.org/git2r/foobar/tree/ec510ebb465d25ab7ad27e8b637cf4113b55cbdf))"
-#> [14] ""  
-#> [15] "Full set of changes:"  
+#> [14] ""
+#> [15] "Full set of changes:"
 #> [16] "[`22b8453...v0.0.1`](https://example.org/git2r/foobar/compare/22b8453...v0.0.1)"
 ```
 
@@ -189,9 +189,8 @@ add the following snippet to your project’s
 
 ``` yaml
 - repo: https://github.com/kapsner/autonewsmd
-  rev: v0.1.0
+  rev: v0.1.0.9002
   hooks:
-  - id: changelog-helper
   - id: recreate-changelog
     args: [ --file_name=NEWS ]  # 'NEWS' is the default value. Can be changed to e.g. 'CHANGELOG'
 ```

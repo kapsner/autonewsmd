@@ -160,9 +160,8 @@ The functionality of `autonewsmd` is also available as a pre-commit hook (for mo
 
 ```{yaml}
 - repo: https://github.com/kapsner/autonewsmd
-  rev: v0.1.0
+  rev: v0.1.0.9002
   hooks:
-  - id: changelog-helper
   - id: recreate-changelog
     args: [ --file_name=NEWS ]  # 'NEWS' is the default value. Can be changed to e.g. 'CHANGELOG'
 ```

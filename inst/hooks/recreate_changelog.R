@@ -28,30 +28,25 @@ if (length(arguments$repo_remotes) > 0) {
   repo_remotes <- "origin"
 }
 
-tempfile <- file.path(tempdir(), "../.commit_temp_helper")
-
-if (file.exists(tempfile)) {
-  file.remove(tempfile)
-  args <- list(repo_name = basename(getwd()))
-  if (!is.null(repo_remotes)) {
-    args$repo_remotes <- repo_remotes
-  }
-  tryCatch(
-    expr = {
-      an <- do.call(autonewsmd::autonewsmd$new, args)
-      an$file_name <- filename
-      an$generate()
-      an$write(force = TRUE)
-
-      system(paste0(
-        "git add ",
-        filename,
-        ".md && ",
-        "git commit --amend --no-edit --no-verify"
-      ))
-    },
-    error = function(e) {
-      warning(e)
-    }
-  )
+args <- list(repo_name = basename(getwd()))
+if (!is.null(repo_remotes)) {
+  args$repo_remotes <- repo_remotes
 }
+tryCatch(
+  expr = {
+    an <- do.call(autonewsmd::autonewsmd$new, args)
+    an$file_name <- filename
+    an$generate()
+    an$write(force = TRUE)
+
+    system(paste0(
+      "git add ",
+      filename,
+      ".md && ",
+      "SKIP=recreate-changelog git commit --amend --no-edit --no-verify"
+    ))
+  },
+  error = function(e) {
+    warning(e)
+  }
+)
