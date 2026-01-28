@@ -12,7 +12,7 @@ if (!(requireNamespace("pak"))) {
   install.packages("pak")
 }
 
-for (req_pkg in c("autonewsmd", "precommit", "docopt", "git2r")) {
+for (req_pkg in c("autonewsmd", "precommit", "docopt")) {
   if (!(requireNamespace(req_pkg))) {
     pak::pkg_install(req_pkg)
   }
@@ -56,14 +56,26 @@ tryCatch(
       skip_string <- append_string
     }
 
-    system(paste0(
-      "git add ",
-      filename,
-      ".md && ",
-      "SKIP=",
-      skip_string,
-      " git commit --amend --no-edit --no-verify"
-    ))
+    # set skip env-var (https://pre-commit.com/#temporarily-disabling-hooks)
+    Sys.setenv(SKIP = skip_string)
+
+    # git add
+    system2(
+      command = "git",
+      args = c("add", paste0(filename, ".md"))
+    )
+
+    # git commit, with SKIP and --amend --no-verify
+    # to avoid endless loops
+    system2(
+      command = "git",
+      args = c("commit", "--amend", "--no-edit", "--no-verify")
+    )
+
+    if (cur_val != "") {
+      # reset previous skip value
+      Sys.setenv(SKIP = cur_val)
+    }
   },
   error = function(e) {
     warning(e)

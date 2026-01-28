@@ -2,12 +2,19 @@
 
 # autonewsmd NEWS
 
-## Unreleased (2026-01-27)
+## Unreleased (2026-01-28)
+
+#### Other changes
+
+- switched to system2 to execute system commands
+  ([71e0520](https://github.com/kapsner/autonewsmd/tree/71e052008b642bfd45b2225a8b55a90f4f92b2f6))
+
+## v0.1.0.9003 (2026-01-27)
 
 #### Bug fixes
 
 - handling of skip env-var to respect existing parameters
-  ([a7c57c7](https://github.com/kapsner/autonewsmd/tree/a7c57c77be8c57934ecba451b844d844d4ad2c95))
+  ([c3c9111](https://github.com/kapsner/autonewsmd/tree/c3c911109e2a660b8fd72b28fc805d9a5a9295b2))
 
 ## v0.1.0.9002 (2026-01-27)
 
